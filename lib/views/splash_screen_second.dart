@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nutria/components.dart';
 
 class SplashScreenSecond extends StatelessWidget {
   const SplashScreenSecond({Key? key}) : super(key: key);
@@ -7,7 +8,8 @@ class SplashScreenSecond extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Center(
+      body: SafeArea(
+          child: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -23,8 +25,13 @@ class SplashScreenSecond extends StatelessWidget {
               const SizedBox(
                 height: 60,
               ),
-              const Text('Find Out The Nutritions and Benefits of\nFruits and Vegetables', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),textAlign: TextAlign.center),
-              const SizedBox(height: 30,),
+              const Text(
+                  'Find Out The Nutritions and Benefits of\nFruits and Vegetables',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center),
+              const SizedBox(
+                height: 30,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -32,28 +39,28 @@ class SplashScreenSecond extends StatelessWidget {
                     width: 10,
                     height: 10,
                     decoration: const BoxDecoration(
-                      color: Color(0xffDBDBDB),
-                      shape: BoxShape.circle
-                    ),
+                        color: Color(0xffDBDBDB), shape: BoxShape.circle),
                   ),
-                  SizedBox(width: 5,),
+                  const SizedBox(
+                    width: 5,
+                  ),
                   Container(
                     width: 10,
                     height: 10,
                     decoration: const BoxDecoration(
-                        color: Color(0xff58D7B7),
-                        shape: BoxShape.circle
-                    ),
+                        color: Color(0xff58D7B7), shape: BoxShape.circle),
                   ),
                 ],
               ),
-              SizedBox(height: 15,),
-              MaterialButton(onPressed: (){
-                Get.toNamed("/login_screen");
-              },
-                height: 50,
-                minWidth: double.infinity,
-                child: const Text('Next'), color: const Color(0xff58D7B7),)
+              const SizedBox(
+                height: 15,
+              ),
+              SplashButton(
+                  color: const Color(0xff58D7B7),
+                  title: "Next",
+                  onPressed: () {
+                    Get.toNamed('/login_screen');
+                  })
             ],
           ),
         ),

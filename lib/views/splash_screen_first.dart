@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nutria/views/splash_screen_second.dart';
 
+import '../components.dart';
+
 class SplashScreenFirst extends StatelessWidget {
   const SplashScreenFirst({Key? key}) : super(key: key);
 
@@ -49,13 +51,9 @@ class SplashScreenFirst extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 15,),
-              MaterialButton(onPressed: (){
+              SplashButton(title: 'Next', color: const Color(0xff58D7B7), onPressed: (){
                 Get.to(const SplashScreenSecond(), transition: Transition.rightToLeft, duration: const Duration(milliseconds: 700));
-                // Get.toNamed("/splash_screen_second");
-              },
-                height: 50,
-                minWidth: double.infinity,
-                child: const Text('Next'), color: const Color(0xff58D7B7),)
+              },)
             ],
           ),
         ),
@@ -63,3 +61,4 @@ class SplashScreenFirst extends StatelessWidget {
     );
   }
 }
+

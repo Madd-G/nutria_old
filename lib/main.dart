@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
-      initialRoute: '/login_screen',
+      home: const SplashScreenFirst(),
+      initialRoute: '/splash_screen_first',
       getPages: [
         GetPage(name: '/', page: () => const HomeScreen()),
         GetPage(name: '/splash_screen_first', page: () => const SplashScreenFirst()),
