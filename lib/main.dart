@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:nutria/views/fruit_detail_screen.dart';
 import 'package:nutria/views/fruit_list_screen.dart';
 import 'package:nutria/views/login_screen.dart';
@@ -26,8 +25,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
-      initialRoute: '/',
+      home: const SplashScreenFirst(),
+      initialRoute: '/splash_screen_first',
       getPages: [
         GetPage(name: '/', page: () => const HomeScreen()),
         GetPage(name: '/splash_screen_first', page: () => const SplashScreenFirst()),
