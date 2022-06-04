@@ -51,7 +51,7 @@ class SplashScreenFirst extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 15,),
-              SplashButton(title: 'Next', color: const Color(0xff58D7B7), onPressed: (){
+              MainButton(title: 'Next', color: const Color(0xff58D7B7), onPressed: (){
                 Get.to(const SplashScreenSecond(), transition: Transition.rightToLeft, duration: const Duration(milliseconds: 700));
               },)
             ],

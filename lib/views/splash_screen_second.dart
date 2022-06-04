@@ -55,7 +55,7 @@ class SplashScreenSecond extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              SplashButton(
+              MainButton(
                   color: const Color(0xff58D7B7),
                   title: "Next",
                   onPressed: () {

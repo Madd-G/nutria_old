@@ -13,8 +13,8 @@ const textInputDecoration = InputDecoration(
       borderRadius: BorderRadius.all(Radius.circular(10.0)),
     ));
 
-class SplashButton extends StatelessWidget {
-  const SplashButton({required this.color, required this.title, required this.onPressed});
+class MainButton extends StatelessWidget {
+  const MainButton({required this.color, required this.title, required this.onPressed});
 
   final Color color;
   final String title;
