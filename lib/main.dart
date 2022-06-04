@@ -25,6 +25,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color(0xff58D7B7)
+        )
+      ),
       home: const SplashScreenFirst(),
       initialRoute: '/splash_screen_first',
       getPages: [
