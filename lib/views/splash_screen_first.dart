@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nutria/views/splash_screen_second.dart';
-
 import '../components.dart';
 
 class SplashScreenFirst extends StatelessWidget {
@@ -10,7 +9,8 @@ class SplashScreenFirst extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Center(
+      body: SafeArea(
+          child: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -26,34 +26,45 @@ class SplashScreenFirst extends StatelessWidget {
               const SizedBox(
                 height: 60,
               ),
-              const Text('Identify Fruits and Vegetables Through\nCamera and Pictures', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),textAlign: TextAlign.center),
-              const SizedBox(height: 30,),
+              const Text(
+                  'Identify Fruits and Vegetables Through\nCamera and Pictures',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center),
+              const SizedBox(
+                height: 30,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     width: 10,
                     height: 10,
-                    decoration: const BoxDecoration(
-                        color: Color(0xff58D7B7),
-                        shape: BoxShape.circle
-                    ),
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.primary, shape: BoxShape.circle),
                   ),
-                  const SizedBox(width: 5,),
+                  const SizedBox(
+                    width: 5,
+                  ),
                   Container(
                     width: 10,
                     height: 10,
                     decoration: const BoxDecoration(
-                        color: Color(0xffDBDBDB),
-                        shape: BoxShape.circle
-                    ),
+                        color: Color(0xffDBDBDB), shape: BoxShape.circle),
                   ),
                 ],
               ),
-              const SizedBox(height: 15,),
-              MainButton(title: 'Next', color: Theme.of(context).colorScheme.primary, onPressed: (){
-                Get.to(const SplashScreenSecond(), transition: Transition.rightToLeft, duration: const Duration(milliseconds: 700));
-              },)
+              const SizedBox(
+                height: 15,
+              ),
+              MainButton(
+                title: 'Next',
+                color: Theme.of(context).colorScheme.primary,
+                onPressed: () {
+                  Get.to(const SplashScreenSecond(),
+                      transition: Transition.rightToLeft,
+                      duration: const Duration(milliseconds: 700));
+                },
+              )
             ],
           ),
         ),
@@ -61,4 +72,3 @@ class SplashScreenFirst extends StatelessWidget {
     );
   }
 }
-

@@ -21,8 +21,10 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -30,13 +32,13 @@ class MyApp extends StatelessWidget {
           primary: const Color(0xff58D7B7)
         )
       ),
-      home: const SplashScreenFirst(),
-      initialRoute: '/splash_screen_first',
+      home: LoginScreen(),
+      initialRoute: '/login_screen',
       getPages: [
         GetPage(name: '/', page: () => const HomeScreen()),
         GetPage(name: '/splash_screen_first', page: () => const SplashScreenFirst()),
         GetPage(name: '/splash_screen_second', page: () => const SplashScreenSecond()),
-        GetPage(name: '/login_screen', page: () => const LoginScreen()),
+        GetPage(name: '/login_screen', page: () => LoginScreen()),
         GetPage(name: '/sign_up_screen_first', page: () => const SignUpScreenFirst()),
         GetPage(name: '/sign_up_screen_second', page: () => const SignUpScreenSecond()),
         GetPage(name: '/upload_profile_photo_screen', page: () => const UploadProfilePhotoScreen()),

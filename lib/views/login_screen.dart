@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:nutria/controllers/controller.dart';
+import 'package:get/get.dart';
 import '../components.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -7,6 +8,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Controller c = Get.put<Controller>(Controller());
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -17,20 +19,25 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            const Icon(
-              Icons.arrow_back_ios,
-              color: Color(0xff58D7B7),
+            IconButton(
+              icon: const Icon(
+                Icons.arrow_back_ios,
+              ),
+              color: Theme.of(context).colorScheme.primary,
+              onPressed: () {
+                Get.offNamed('splash_screen_second');
+              },
             ),
             const SizedBox(
               height: 15,
             ),
-            const Text("Login",
+            Text("Login",
                 style: TextStyle(
-                    color: Color(0xff58D7B7),
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 40,
                     fontWeight: FontWeight.w500)),
             const SizedBox(
-              height: 25,
+              height: 30,
             ),
             const Text(
               "Enter your email address and\npassword to access your account",
@@ -41,11 +48,67 @@ class LoginScreen extends StatelessWidget {
             ),
             TextField(
                 keyboardType: TextInputType.emailAddress,
-                decoration: textInputDecoration.copyWith(hintText: 'Email')),
+                decoration: textInputDecoration.copyWith(
+                    hintText: 'Email',
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Theme.of(context).colorScheme.primary)))),
             const SizedBox(height: 20),
-            TextField(
+            Obx(
+              () => TextField(
                 keyboardType: TextInputType.text,
-                decoration: textInputDecoration.copyWith(hintText: 'Password')),
+                obscureText: c.isHidden.value ? true : false,
+                decoration: textInputDecoration.copyWith(
+                  suffixIconColor: Theme.of(context).colorScheme.primary,
+                  hintText: 'Password',
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Theme.of(context).colorScheme.primary)),
+                  suffixIcon: GestureDetector(
+                    onTap: () => c.toggleVisibility(),
+                    child: Icon(c.isHidden.value == true
+                        ? Icons.visibility_off
+                        : Icons.visibility),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Text('Forgot Password?',
+                  style: TextStyle(color: Theme.of(context).colorScheme.primary)),
+            ),
+            const SizedBox(
+              height: 70,
+            ),
+            MainButton(
+                color: Theme.of(context).colorScheme.primary,
+                title: 'Login',
+                onPressed: () {
+                  Get.toNamed('/home-screen');
+                }),
+            const SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Don\'t have an account? ',
+                  style: TextStyle(fontSize: 17),
+                ),
+                GestureDetector(
+                  onTap: () => Get.toNamed('/sign_up_screen_first'),
+                  child: Text('Sign Up',
+                      style: TextStyle(
+                          fontSize: 17,
+                          color: Theme.of(context).colorScheme.primary)),
+                )
+              ],
+            )
           ],
         ),
       ),

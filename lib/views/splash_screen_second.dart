@@ -47,8 +47,8 @@ class SplashScreenSecond extends StatelessWidget {
                   Container(
                     width: 10,
                     height: 10,
-                    decoration: const BoxDecoration(
-                        color: Color(0xff58D7B7), shape: BoxShape.circle),
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.primary, shape: BoxShape.circle),
                   ),
                 ],
               ),
