@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:nutria/models/messages.dart';
 import 'package:nutria/views/fruit_detail_screen.dart';
 import 'package:nutria/views/fruit_list_screen.dart';
 import 'package:nutria/views/login_screen.dart';
@@ -32,14 +33,17 @@ class MyApp extends StatelessWidget {
           primary: const Color(0xff58D7B7)
         )
       ),
-      home: LoginScreen(),
-      initialRoute: '/login_screen',
+      translations: Messages(),
+      locale: const Locale('en_US', 'EN_US'),
+      fallbackLocale: const Locale('en_US', 'EN_US'),
+      home: SignUpScreenFirst(),
+      initialRoute: '/sign_up_screen_first',
       getPages: [
         GetPage(name: '/', page: () => const HomeScreen()),
         GetPage(name: '/splash_screen_first', page: () => const SplashScreenFirst()),
         GetPage(name: '/splash_screen_second', page: () => const SplashScreenSecond()),
-        GetPage(name: '/login_screen', page: () => LoginScreen()),
-        GetPage(name: '/sign_up_screen_first', page: () => const SignUpScreenFirst()),
+        GetPage(name: '/login_screen', page: () => const LoginScreen()),
+        GetPage(name: '/sign_up_screen_first', page: () => SignUpScreenFirst()),
         GetPage(name: '/sign_up_screen_second', page: () => const SignUpScreenSecond()),
         GetPage(name: '/upload_profile_photo_screen', page: () => const UploadProfilePhotoScreen()),
         GetPage(name: '/fruit_list_screen', page: () => const FruitListScreen()),
