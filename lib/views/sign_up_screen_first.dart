@@ -1,3 +1,4 @@
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nutria/controllers/translations_controller.dart';
@@ -5,7 +6,7 @@ import '../components.dart';
 
 class SignUpScreenFirst extends StatelessWidget {
   SignUpScreenFirst({Key? key}) : super(key: key);
-
+  final languages = ['English', 'Indonesia'];
   final messageController = Get.put(MessagesController());
 
   @override
@@ -64,23 +65,21 @@ class SignUpScreenFirst extends StatelessWidget {
                         borderSide: BorderSide(
                             color: Theme.of(context).colorScheme.primary)))),
             const SizedBox(height: 20),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () =>
-                      messageController.changeLanguage('en_US', 'id'),
-                  child: const Text('English'),
-                ), ElevatedButton(
-                  onPressed: () =>
-                      messageController.changeLanguage('id', 'en_US'),
-                  child: const Text('Indonesia'),
-                ),
-              ],
+            DropdownSearch<String>(
+              mode: Mode.MENU,
+              showSelectedItem: true,
+              items: languages,
+              label: "Language",
+              hint: "select language",
+              selectedItem: "English",
+              onChanged:  (String? data) {
+                if (data == 'English') {
+                  messageController.changeLanguage('en_US', 'id');
+                } else if (data == "Indonesia") {
+                  messageController.changeLanguage('id', 'en_US');
+                }
+              }
             ),
-
-
             const SizedBox(
               height: 10,
             ),
