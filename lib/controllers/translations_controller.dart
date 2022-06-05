@@ -6,12 +6,4 @@ class MessagesController extends GetxController {
     var locale = Locale(languageCode, countryCode);
     Get.updateLocale(locale);
   }
-
-  selectLanguage(String? item) {
-    if (item == 'English') {
-      changeLanguage('en_US', 'id');
-    } else if (item == "Indonesia") {
-      changeLanguage('id', 'en_US');
-    }
-  }
 }
