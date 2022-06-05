@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
-import 'controllers/gender_controller.dart';
-
+import '../controllers/gender_controller.dart';
 
 class GenderRadioButton extends StatelessWidget {
   final String value;

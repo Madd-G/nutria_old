@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nutria/views/splash_screen_second.dart';
-import '../components.dart';
+import '../components/main_button.dart';
 
 class SplashScreenFirst extends StatelessWidget {
   const SplashScreenFirst({Key? key}) : super(key: key);
@@ -40,7 +40,8 @@ class SplashScreenFirst extends StatelessWidget {
                     width: 10,
                     height: 10,
                     decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary, shape: BoxShape.circle),
+                        color: Theme.of(context).colorScheme.primary,
+                        shape: BoxShape.circle),
                   ),
                   const SizedBox(
                     width: 5,

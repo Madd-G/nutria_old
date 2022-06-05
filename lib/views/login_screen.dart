@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nutria/controllers/controller.dart';
 import 'package:get/get.dart';
-import '../components.dart';
+import '../components/main_button.dart';
+import '../components/text_input_decoration.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -79,7 +80,8 @@ class LoginScreen extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: Text('Forgot Password?',
-                  style: TextStyle(color: Theme.of(context).colorScheme.primary)),
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.primary)),
             ),
             const SizedBox(
               height: 70,

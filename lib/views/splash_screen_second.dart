@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nutria/components.dart';
+
+import '../components/main_button.dart';
 
 class SplashScreenSecond extends StatelessWidget {
   const SplashScreenSecond({Key? key}) : super(key: key);
@@ -48,7 +49,8 @@ class SplashScreenSecond extends StatelessWidget {
                     width: 10,
                     height: 10,
                     decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary, shape: BoxShape.circle),
+                        color: Theme.of(context).colorScheme.primary,
+                        shape: BoxShape.circle),
                   ),
                 ],
               ),

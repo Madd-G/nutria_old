@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nutria/controllers/gender_controller.dart';
 import 'package:nutria/controllers/translations_controller.dart';
-import 'package:nutria/gender_radio_button.dart';
-import '../components.dart';
+import 'package:nutria/components/gender_radio_button.dart';
+import '../components/main_button.dart';
+import '../components/text_input_decoration.dart';
 
 class SignUpScreenFirst extends StatelessWidget {
   SignUpScreenFirst({Key? key}) : super(key: key);
   final languages = ['English', 'Indonesia'];
   final messageController = Get.put(MessagesController());
+
   @override
   Widget build(BuildContext context) {
     Get.put(GenderController());
@@ -89,15 +91,6 @@ class SignUpScreenFirst extends StatelessWidget {
                 GenderRadioButton(value: 'Male', title: 'Male'),
                 GenderRadioButton(value: 'Female', title: 'Female'),
               ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Text('Forgot Password?',
-                  style:
-                      TextStyle(color: Theme.of(context).colorScheme.primary)),
             ),
             const SizedBox(
               height: 70,
