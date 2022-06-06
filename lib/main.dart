@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
       translations: Messages(),
       locale: const Locale('en_US', 'EN_US'),
       fallbackLocale: const Locale('en_US', 'EN_US'),
-      home: SplashScreenFirst(),
-      initialRoute: '/splash_screen_first',
+      home: const UploadProfilePhotoScreen(),
+      initialRoute: '/upload_profile_photo_screen',
       getPages: [
         GetPage(name: '/', page: () => const HomeScreen()),
         GetPage(name: '/splash_screen_first', page: () => const SplashScreenFirst()),
