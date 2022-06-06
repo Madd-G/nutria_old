@@ -97,9 +97,9 @@ class SignUpScreenFirst extends StatelessWidget {
             ),
             MainButton(
                 color: Theme.of(context).colorScheme.primary,
-                title: 'Login',
+                title: 'Next',
                 onPressed: () {
-                  Get.toNamed('/home-screen');
+                  Get.toNamed('/sign_up_screen_second');
                 }),
             const SizedBox(
               height: 30,
@@ -112,8 +112,8 @@ class SignUpScreenFirst extends StatelessWidget {
                   style: TextStyle(fontSize: 17),
                 ),
                 GestureDetector(
-                  onTap: () => Get.toNamed('/sign_up_screen_first'),
-                  child: Text('Sign Up',
+                  onTap: () => Get.toNamed('/login_screen'),
+                  child: Text('Login',
                       style: TextStyle(
                           fontSize: 17,
                           color: Theme.of(context).colorScheme.primary)),

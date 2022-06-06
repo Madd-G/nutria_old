@@ -18,19 +18,7 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 30,
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.arrow_back_ios,
-              ),
-              color: Theme.of(context).colorScheme.primary,
-              onPressed: () {
-                Get.offNamed('splash_screen_second');
-              },
-            ),
-            const SizedBox(
-              height: 15,
+              height: 45,
             ),
             Text("Login",
                 style: TextStyle(
@@ -38,14 +26,14 @@ class LoginScreen extends StatelessWidget {
                     fontSize: 40,
                     fontWeight: FontWeight.w500)),
             const SizedBox(
-              height: 30,
+              height: 50,
             ),
             const Text(
               "Enter your email address and\npassword to access your account",
               style: TextStyle(fontSize: 20),
             ),
             const SizedBox(
-              height: 45,
+              height: 35,
             ),
             TextField(
                 keyboardType: TextInputType.emailAddress,

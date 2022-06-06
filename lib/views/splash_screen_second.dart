@@ -16,7 +16,7 @@ class SplashScreenSecond extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(
-                height: 80,
+                height: 60,
               ),
               SizedBox(
                 height: 450,
@@ -24,7 +24,7 @@ class SplashScreenSecond extends StatelessWidget {
                 child: Image.asset('assets/images/splash2_image.png'),
               ),
               const SizedBox(
-                height: 60,
+                height: 40,
               ),
               const Text(
                   'Find Out The Nutritions and Benefits of\nFruits and Vegetables',

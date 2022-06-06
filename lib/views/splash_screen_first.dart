@@ -16,7 +16,7 @@ class SplashScreenFirst extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(
-                height: 80,
+                height: 60,
               ),
               SizedBox(
                 height: 450,
@@ -24,7 +24,7 @@ class SplashScreenFirst extends StatelessWidget {
                 child: Image.asset('assets/images/splash1_image.png'),
               ),
               const SizedBox(
-                height: 60,
+                height: 40,
               ),
               const Text(
                   'Identify Fruits and Vegetables Through\nCamera and Pictures',
