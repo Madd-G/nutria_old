@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nutria/views/camera_screen.dart';
+import 'package:nutria/views/profile_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+   HomeScreen({Key? key}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -64,8 +68,8 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15.0,
                     ),
-                    Align(
-                      child: const Text('Kategori'),
+                    const Align(
+                      child: Text('Kategori'),
                       alignment: Alignment.centerLeft,
                     ),
                     const SizedBox(
@@ -79,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                           width: 180,
                           color: Colors.blue,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20.0,
                         ),
                         Container(
@@ -95,30 +99,6 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-              icon: GestureDetector(
-                  onTap: () => Get.toNamed('/camera_screen'),
-                  child: const Icon(Icons.camera_alt)),
-              label: 'SCAN'),
-          BottomNavigationBarItem(
-              icon: GestureDetector(
-                  onTap: () => Get.toNamed('/'),
-                  child: const Icon(Icons.home)),
-              label: 'HOME',
-              activeIcon: Icon(
-                Icons.camera_alt,
-                color: Theme.of(context).colorScheme.primary,
-              )),
-          BottomNavigationBarItem(
-              icon: GestureDetector(
-                  onTap: () => Get.toNamed('/profile_screen'),
-                  child: const Icon(Icons.person)),
-              label: 'PROFILE'),
-        ],
       ),
     );
   }

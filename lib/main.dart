@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:nutria/controllers/screen_controller.dart';
 import 'package:nutria/models/messages.dart';
 import 'package:nutria/views/camera_screen.dart';
 import 'package:nutria/views/fruit_detail_screen.dart';
@@ -38,8 +39,8 @@ class MyApp extends StatelessWidget {
       translations: Messages(),
       locale: const Locale('en_US', 'EN_US'),
       fallbackLocale: const Locale('en_US', 'EN_US'),
-      home: HomeScreen(),
-      initialRoute: '/',
+      home: ScreenController(),
+      initialRoute: '/screen_controller',
       getPages: [
         GetPage(name: '/', page: () =>  HomeScreen()),
         GetPage(name: '/splash_screen_first', page: () => const SplashScreenFirst()),
@@ -54,6 +55,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/vegetable_detail_screen', page: () => const VegetableDetailScreen()),
         GetPage(name: '/profile_screen', page: () => const ProfileScreen()),
         GetPage(name: '/camera_screen', page: () => const CameraScreen()),
+        GetPage(name: '/screen_controller', page: () => ScreenController()),
+
       ],
     );
   }
