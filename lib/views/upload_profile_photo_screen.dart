@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../components/main_button.dart';
-import '../components/text_input_decoration.dart';
-import '../controllers/controller.dart';
 
 class UploadProfilePhotoScreen extends StatelessWidget {
   const UploadProfilePhotoScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final Controller c = Get.put<Controller>(Controller());
     return Scaffold(
         body: SafeArea(
       child: SingleChildScrollView(
@@ -48,7 +45,7 @@ class UploadProfilePhotoScreen extends StatelessWidget {
                   ),
                   height: 300,
                   width: 300,
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                 ),
               ),
               const SizedBox(
@@ -63,7 +60,7 @@ class UploadProfilePhotoScreen extends StatelessWidget {
               ),
               Center(
                 child: GestureDetector(
-                  onTap: () => Get.toNamed('/home_screen'),
+                  onTap: () => Get.toNamed('/screen_controller'),
                   child: const Text('Skip', style: TextStyle(fontSize: 17)),
                 ),
               )

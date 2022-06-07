@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:nutria/controllers/screen_controller.dart';
 import 'package:nutria/models/messages.dart';
 import 'package:nutria/views/camera_screen.dart';
 import 'package:nutria/views/fruit_detail_screen.dart';
@@ -16,6 +15,8 @@ import 'package:nutria/views/upload_profile_photo_screen.dart';
 import 'package:nutria/views/vegetable_detail_screen.dart';
 import 'package:nutria/views/vegetable_list_screen.dart';
 import 'package:nutria/views/home_screen.dart';
+
+import 'controllers/screen_controller.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

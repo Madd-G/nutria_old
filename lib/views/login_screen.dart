@@ -79,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                   color: Theme.of(context).colorScheme.primary,
                   title: 'Login',
                   onPressed: () {
-                    Get.toNamed('/home-screen');
+                    Get.toNamed('/screen_controller');
                   }),
               const SizedBox(
                 height: 30,

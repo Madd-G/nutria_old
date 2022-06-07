@@ -8,7 +8,7 @@ import '../views/profile_screen.dart';
 class ScreenController extends StatelessWidget {
   ScreenController({Key? key}) : super(key: key);
 
-  final RxInt _currentIndex = 0.obs;
+  final RxInt _currentIndex = 1.obs;
 
   final screens = [
     CameraScreen(),
