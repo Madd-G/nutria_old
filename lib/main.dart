@@ -16,6 +16,7 @@ import 'package:nutria/views/vegetable_list_screen.dart';
 import 'package:nutria/views/home_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
@@ -36,8 +37,8 @@ class MyApp extends StatelessWidget {
       translations: Messages(),
       locale: const Locale('en_US', 'EN_US'),
       fallbackLocale: const Locale('en_US', 'EN_US'),
-      home: const UploadProfilePhotoScreen(),
-      initialRoute: '/upload_profile_photo_screen',
+      home: const HomeScreen(),
+      initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => const HomeScreen()),
         GetPage(name: '/splash_screen_first', page: () => const SplashScreenFirst()),
