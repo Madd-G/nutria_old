@@ -66,6 +66,19 @@ class HomeScreen extends StatelessWidget {
                         height: 90.0,
                         width: double.infinity,
                         color: Theme.of(context).colorScheme.primary,
+                        child: Padding(
+                          padding: EdgeInsets.all(16.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset('assets/images/scan.png'),
+                              const SizedBox(width: 18.0,),
+                              const Text('SCAN UNTUK MENGETAHUI\nJENIS BUAH ATAU SAYURAN', style: TextStyle(
+                                fontSize: 18.0, fontWeight: FontWeight.w700, color: Colors.white
+                              ),)
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -84,7 +97,11 @@ class HomeScreen extends StatelessWidget {
                         Container(
                           height: 150,
                           width: 180,
-                          color: Colors.blue,
+                          // color: Colors.white,
+                          child: Image.asset('assets/images/buah.png', fit: BoxFit.fill,),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
                         ),
                         const SizedBox(
                           width: 20.0,
@@ -92,7 +109,11 @@ class HomeScreen extends StatelessWidget {
                         Container(
                           height: 150,
                           width: 180,
-                          color: Colors.blue,
+                          // color: Colors.white,
+                          child: Image.asset('assets/images/sayuran.png', fit: BoxFit.fill,),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
                         ),
                       ],
                     ),
@@ -107,19 +128,40 @@ class HomeScreen extends StatelessWidget {
           ),
             Positioned(
               top: 220,
-              left: MediaQuery.of(context).size.width/12,
-              right: MediaQuery.of(context).size.width/12,
+              left: MediaQuery.of(context).size.width/14,
+              right: MediaQuery.of(context).size.width/14,
               // right: width/2,
               // left: -175,
               child: GestureDetector(
                 onTap: () => Get.toNamed('/login_screen'),
                 child: Container(
                   height: 60.0,
-                  width: 300.0,
+                  width: 320.0,
                   decoration:  BoxDecoration(
-                      color: Colors.red,
-                    borderRadius: BorderRadius.circular(20.0)
+                      color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 1.0,
+                        blurStyle: BlurStyle.outer,
+                        offset: Offset.fromDirection(1.0),
+                        spreadRadius: 1.0
+                      )
+                      ],
+                    borderRadius: BorderRadius.circular(30.0)
                   ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Row(
+                      children: const [
+                        Icon(Icons.search, color: Colors.black26,),
+                        SizedBox(width: 8.0,),
+                        Text('Cari Buah dan Sayuran', style: TextStyle(
+                          color: Colors.black26
+                        ),)
+                      ],
+                    ),
+                  )
                 ),
               ),
             ),
