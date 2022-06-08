@@ -12,9 +12,9 @@ class RecommendationCarousel extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Align(
+          const Align(
             alignment: Alignment.centerLeft,
-            child: const Text(
+            child: Text(
               'Rekomendasi',
             ),
           ),
@@ -32,8 +32,8 @@ class RecommendationCarousel extends StatelessWidget {
           ),
         ],
       ),
-      Container(
-          height: 300.0,
+      SizedBox(
+          height: 200.0,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: recommendations.length,
