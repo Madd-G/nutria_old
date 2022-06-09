@@ -15,7 +15,7 @@ class RecommendationCarousel extends StatelessWidget {
           const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              'Rekomendasi',
+              'Rekomendasi',style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
             ),
           ),
           GestureDetector(

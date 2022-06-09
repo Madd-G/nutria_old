@@ -92,7 +92,11 @@ class HomeScreen extends StatelessWidget {
                         height: 15.0,
                       ),
                       const Align(
-                        child: Text('Kategori'),
+                        child: Text(
+                          'Kategori',
+                          style: TextStyle(
+                              fontSize: 20.0, fontWeight: FontWeight.w600),
+                        ),
                         alignment: Alignment.centerLeft,
                       ),
                       const SizedBox(
@@ -103,30 +107,40 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Container(
                             height: 150,
-                            width: 180,
+                            width: 195,
                             // color: Colors.white,
                             child: Image.asset(
                               'assets/images/buah.png',
                               fit: BoxFit.fill,
                             ),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
+                                borderRadius: BorderRadius.circular(10.0),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black26,
+                                      offset: Offset(0.0, 2.0),
+                                      blurRadius: 5.0)
+                                ]),
                           ),
                           const SizedBox(
-                            width: 20.0,
+                            width: 10.0,
                           ),
                           Container(
                             height: 150,
-                            width: 180,
+                            width: 195,
                             // color: Colors.white,
                             child: Image.asset(
                               'assets/images/sayuran.png',
                               fit: BoxFit.fill,
                             ),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
+                                borderRadius: BorderRadius.circular(10.0),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black26,
+                                      offset: Offset(0.0, 2.0),
+                                      blurRadius: 5.0)
+                                ]),
                           ),
                         ],
                       ),

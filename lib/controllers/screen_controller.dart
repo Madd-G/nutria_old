@@ -27,7 +27,7 @@ class ScreenController extends StatelessWidget {
           items: const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.camera_alt),
-                label: 'SCAN'),
+                label: 'SCAN', ),
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'HOME',
