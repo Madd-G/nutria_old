@@ -6,7 +6,7 @@ class Recommendation {
 }
 
 final List<Recommendation> recommendations = [
-  Recommendation(imageUrl: 'assets/images/apel.jpeg', title: 'Apel'),
-  Recommendation(imageUrl: 'assets/images/apel.jpeg', title: 'Apel'),
-  Recommendation(imageUrl: 'assets/images/apel.jpeg', title: 'Apel'),
+  Recommendation(imageUrl: 'assets/images/apel.png', title: 'Apel'),
+  Recommendation(imageUrl: 'assets/images/apel.png', title: 'Apel'),
+  Recommendation(imageUrl: 'assets/images/apel.png', title: 'Apel'),
 ];

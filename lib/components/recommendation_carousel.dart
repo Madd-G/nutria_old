@@ -46,24 +46,14 @@ class RecommendationCarousel extends StatelessWidget {
                             builder: (_) => const FruitDetailScreen(),
                           ),
                         ),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.0),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black26,
-                            offset: Offset(0.0, 2.0),
-                            blurRadius: 6.0,
-                          ),
-                        ],
-                      ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Stack(
                         children: <Widget>[
                           Hero(
                             tag: recommendation.imageUrl,
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20.0),
+                              borderRadius: BorderRadius.circular(10.0),
                               child: Image(
                                 height: 180.0,
                                 width: 180.0,
@@ -73,22 +63,32 @@ class RecommendationCarousel extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            left: 10.0,
+                            // left: 10.0,
                             bottom: 10.0,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
+                            child: Stack(children: [
+                              Container(
+                                width: 70,
+                                height: 23,
+                                // color: Colors.white,
+                                decoration: const BoxDecoration(
+                                  color: Colors.white54,
+                                    borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(5.0),
+                                        bottomRight: Radius.circular(5.0))),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(5, 3, 0, 0),
+                                child: Text(
                                   recommendation.title,
                                   style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24.0,
+                                    color: Colors.black26,
+                                    fontSize: 16.0,
                                     fontWeight: FontWeight.w600,
                                     letterSpacing: 1.2,
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ]),
                           ),
                         ],
                       ),

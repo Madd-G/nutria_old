@@ -36,13 +36,14 @@ class UploadProfilePhotoScreen extends StatelessWidget {
               Center(
                 child: Container(
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(width: 5, color: Theme.of(context).colorScheme.primary),
-                    image: const DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage('assets/images/profile.png')
-                    )
-                  ),
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                          width: 5,
+                          color: Theme.of(context).colorScheme.primary),
+                      image: const DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage('assets/images/profile.png'),
+                      )),
                   height: 300,
                   width: 300,
                   padding: const EdgeInsets.all(8.0),
