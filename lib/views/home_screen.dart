@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nutria/components/recommendation_carousel.dart';
 
+import '../components/text_input_decoration.dart';
+
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
@@ -47,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                           height: 20.0,
                         ),
                         Text(
-                          "Let\'s Learn More About Fruits and Vegetables",
+                          "Let's Learn More About Fruits and Vegetables",
                           style: TextStyle(color: Colors.white, fontSize: 15),
                         ),
                       ],
@@ -68,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                           width: double.infinity,
                           color: Theme.of(context).colorScheme.primary,
                           child: Padding(
-                            padding: EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(16.0),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -107,7 +108,8 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Container(
                             height: 150,
-                            width: 195,
+                            width: MediaQuery.of(context).size.width * 0.45,
+                            // width: 195,
                             // color: Colors.white,
                             child: Image.asset(
                               'assets/images/buah.png',
@@ -127,7 +129,8 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Container(
                             height: 150,
-                            width: 195,
+                            width: MediaQuery.of(context).size.width * 0.45,
+                            // width: 195,
                             // color: Colors.white,
                             child: Image.asset(
                               'assets/images/sayuran.png',
@@ -159,41 +162,45 @@ class HomeScreen extends StatelessWidget {
               right: MediaQuery.of(context).size.width / 14,
               // right: width/2,
               // left: -175,
-              child: GestureDetector(
-                onTap: () => Get.toNamed('/login_screen'),
-                child: Container(
-                    height: 60.0,
-                    width: 320.0,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black,
-                              blurRadius: 1.0,
-                              blurStyle: BlurStyle.outer,
-                              offset: Offset.fromDirection(1.0),
-                              spreadRadius: 1.0)
-                        ],
-                        borderRadius: BorderRadius.circular(30.0)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Row(
-                        children: const [
-                          Icon(
-                            Icons.search,
-                            color: Colors.black26,
-                          ),
-                          SizedBox(
-                            width: 8.0,
-                          ),
-                          Text(
-                            'Cari Buah dan Sayuran',
-                            style: TextStyle(color: Colors.black26),
-                          )
-                        ],
-                      ),
-                    )),
-              ),
+              child: Container(
+                  height: 60.0,
+                  width: 320.0,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black,
+                            blurRadius: 1.0,
+                            blurStyle: BlurStyle.outer,
+                            offset: Offset.fromDirection(1.0),
+                            spreadRadius: 1.0)
+                      ],
+                      borderRadius: BorderRadius.circular(30.0)),
+                  child: const Padding(
+                      padding: EdgeInsets.all(20.0),
+                      child: TextField(
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                              hintText: 'Cari Buah dan Sayuran',
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: 10.0, horizontal: 20.0),
+                              prefixIcon: Icon(Icons.search)))
+                      // Row(
+                      //   children: const [
+                      //     Icon(
+                      //       Icons.search,
+                      //       color: Colors.black26,
+                      //     ),
+                      //     SizedBox(
+                      //       width: 8.0,
+                      //     ),
+                      //     Text(
+                      //       'Cari Buah dan Sayuran',
+                      //       style: TextStyle(color: Colors.black26),
+                      //     )
+                      //   ],
+                      // ),
+                      )),
             ),
           ],
         ),
