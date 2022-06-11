@@ -40,8 +40,8 @@ class MyApp extends StatelessWidget {
       translations: Messages(),
       locale: const Locale('en_US', 'EN_US'),
       fallbackLocale: const Locale('en_US', 'EN_US'),
-      home: ScreenController(),
-      initialRoute: '/screen_controller',
+      home: const FruitListScreen(),
+      initialRoute: '/fruit_list_screen',
       getPages: [
         GetPage(name: '/', page: () =>  HomeScreen()),
         GetPage(name: '/splash_screen_first', page: () => const SplashScreenFirst()),

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:nutria/components/recommendation_carousel.dart';
-
-import '../components/text_input_decoration.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -179,28 +176,14 @@ class HomeScreen extends StatelessWidget {
                   child: const Padding(
                       padding: EdgeInsets.all(20.0),
                       child: TextField(
-                          keyboardType: TextInputType.text,
-                          decoration: InputDecoration(
-                              hintText: 'Cari Buah dan Sayuran',
-                              contentPadding: EdgeInsets.symmetric(
-                                  vertical: 10.0, horizontal: 20.0),
-                              prefixIcon: Icon(Icons.search)))
-                      // Row(
-                      //   children: const [
-                      //     Icon(
-                      //       Icons.search,
-                      //       color: Colors.black26,
-                      //     ),
-                      //     SizedBox(
-                      //       width: 8.0,
-                      //     ),
-                      //     Text(
-                      //       'Cari Buah dan Sayuran',
-                      //       style: TextStyle(color: Colors.black26),
-                      //     )
-                      //   ],
-                      // ),
-                      )),
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                            hintText: 'Cari Buah dan Sayuran',
+                            contentPadding: EdgeInsets.symmetric(
+                                vertical: 8.0, horizontal: 15.0),
+                            prefixIcon: Icon(Icons.search),
+                            border: InputBorder.none),
+                      ))),
             ),
           ],
         ),
