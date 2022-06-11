@@ -11,36 +11,33 @@ class ScreenController extends StatelessWidget {
   final RxInt _currentIndex = 1.obs;
 
   final screens = [
-    CameraScreen(),
-    HomeScreen(),
-    ProfileScreen()
+    const CameraScreen(),
+    const HomeScreen(),
+    const ProfileScreen()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx( () => screens[_currentIndex.value]),
-        bottomNavigationBar: Obx( () =>(
-        BottomNavigationBar(
-          currentIndex: _currentIndex.value,
-          type: BottomNavigationBarType.fixed,
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.camera_alt),
-                label: 'SCAN', ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'HOME',
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'PROFILE'),
-          ],
-          onTap: (index){
-            _currentIndex.value = index;
-            print(index);
-          },
-        )))
-    );
+        body: Obx(() => screens[_currentIndex.value]),
+        bottomNavigationBar: Obx(() => (BottomNavigationBar(
+              currentIndex: _currentIndex.value,
+              type: BottomNavigationBarType.fixed,
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.camera_alt),
+                  label: 'SCAN',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'HOME',
+                ),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.person), label: 'PROFILE'),
+              ],
+              onTap: (index) {
+                _currentIndex.value = index;
+              },
+            ))));
   }
 }

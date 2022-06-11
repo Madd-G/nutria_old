@@ -69,8 +69,8 @@ class LoginScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: Text('Forgot Password?',
-                    style:
-                        TextStyle(color: Theme.of(context).colorScheme.primary)),
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary)),
               ),
               const SizedBox(
                 height: 70,

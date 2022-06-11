@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../components/recommendation_carousel.dart';
-
 class FruitListScreen extends StatelessWidget {
   const FruitListScreen({Key? key}) : super(key: key);
 
@@ -61,13 +59,13 @@ class FruitListScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       const SizedBox(
-                        height: 25.0,
+                        height: 20.0,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            height: 55,
+                            height: 50,
                             width: 140,
                             decoration: BoxDecoration(
                                 color: Theme.of(context).colorScheme.primary,
@@ -80,9 +78,17 @@ class FruitListScreen extends StatelessWidget {
                                       offset: Offset(0.0, 2.0),
                                       blurRadius: 5.0)
                                 ]),
+                            child: const Center(
+                                child: Text(
+                              'Buah',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25.0,
+                                  fontWeight: FontWeight.w700),
+                            )),
                           ),
                           Container(
-                            height: 55,
+                            height: 50,
                             width: 140,
                             decoration: const BoxDecoration(
                                 color: Colors.white,
@@ -95,6 +101,14 @@ class FruitListScreen extends StatelessWidget {
                                       offset: Offset(0.0, 2.0),
                                       blurRadius: 5.0)
                                 ]),
+                            child: Center(
+                                child: Text(
+                              'Sayuran',
+                              style: TextStyle(
+                                  color: Theme.of(context).colorScheme.primary,
+                                  fontSize: 25.0,
+                                  fontWeight: FontWeight.w700),
+                            )),
                           ),
                         ],
                       )

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nutria/models/recommendations_model.dart';
 import 'package:nutria/views/fruit_detail_screen.dart';
+import '../models/fruit_vegetable_model.dart';
 
 class RecommendationCarousel extends StatelessWidget {
   const RecommendationCarousel({Key? key}) : super(key: key);
@@ -15,7 +15,8 @@ class RecommendationCarousel extends StatelessWidget {
           const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              'Rekomendasi',style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
+              'Rekomendasi',
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
             ),
           ),
           GestureDetector(
@@ -38,7 +39,7 @@ class RecommendationCarousel extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: recommendations.length,
               itemBuilder: (BuildContext context, int index) {
-                Recommendation recommendation = recommendations[index];
+                FruitVegetable recommendation = recommendations[index];
                 return GestureDetector(
                     onTap: () => Navigator.push(
                           context,
@@ -71,7 +72,7 @@ class RecommendationCarousel extends StatelessWidget {
                                 height: 23,
                                 // color: Colors.white,
                                 decoration: const BoxDecoration(
-                                  color: Colors.white54,
+                                    color: Colors.white54,
                                     borderRadius: BorderRadius.only(
                                         topRight: Radius.circular(5.0),
                                         bottomRight: Radius.circular(5.0))),

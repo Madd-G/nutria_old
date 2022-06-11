@@ -29,35 +29,46 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: const Color(0xff58D7B7)
-        )
-      ),
+          colorScheme: ColorScheme.fromSwatch()
+              .copyWith(primary: const Color(0xff58D7B7))),
       translations: Messages(),
       locale: const Locale('en_US', 'EN_US'),
       fallbackLocale: const Locale('en_US', 'EN_US'),
       home: const FruitListScreen(),
       initialRoute: '/fruit_list_screen',
       getPages: [
-        GetPage(name: '/', page: () =>  HomeScreen()),
-        GetPage(name: '/splash_screen_first', page: () => const SplashScreenFirst()),
-        GetPage(name: '/splash_screen_second', page: () => const SplashScreenSecond()),
+        GetPage(name: '/', page: () => const HomeScreen()),
+        GetPage(
+            name: '/splash_screen_first',
+            page: () => const SplashScreenFirst()),
+        GetPage(
+            name: '/splash_screen_second',
+            page: () => const SplashScreenSecond()),
         GetPage(name: '/login_screen', page: () => const LoginScreen()),
         GetPage(name: '/sign_up_screen_first', page: () => SignUpScreenFirst()),
-        GetPage(name: '/sign_up_screen_second', page: () => const SignUpScreenSecond()),
-        GetPage(name: '/upload_profile_photo_screen', page: () => const UploadProfilePhotoScreen()),
-        GetPage(name: '/fruit_list_screen', page: () => const FruitListScreen()),
-        GetPage(name: '/vegetable_list_screen', page: () => const VegetableListScreen()),
-        GetPage(name: '/fruit_detail_screen', page: () => const FruitDetailScreen()),
-        GetPage(name: '/vegetable_detail_screen', page: () => const VegetableDetailScreen()),
+        GetPage(
+            name: '/sign_up_screen_second',
+            page: () => const SignUpScreenSecond()),
+        GetPage(
+            name: '/upload_profile_photo_screen',
+            page: () => const UploadProfilePhotoScreen()),
+        GetPage(
+            name: '/fruit_list_screen', page: () => const FruitListScreen()),
+        GetPage(
+            name: '/vegetable_list_screen',
+            page: () => const VegetableListScreen()),
+        GetPage(
+            name: '/fruit_detail_screen',
+            page: () => const FruitDetailScreen()),
+        GetPage(
+            name: '/vegetable_detail_screen',
+            page: () => const VegetableDetailScreen()),
         GetPage(name: '/profile_screen', page: () => const ProfileScreen()),
         GetPage(name: '/camera_screen', page: () => const CameraScreen()),
         GetPage(name: '/screen_controller', page: () => ScreenController()),
-
       ],
     );
   }

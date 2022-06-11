@@ -11,8 +11,8 @@ class SplashScreenFirst extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-            child: Center(
-        child: Padding(
+        child: Center(
+          child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
@@ -69,9 +69,9 @@ class SplashScreenFirst extends StatelessWidget {
                 )
               ],
             ),
+          ),
         ),
-      ),
-          )),
+      )),
     );
   }
 }
