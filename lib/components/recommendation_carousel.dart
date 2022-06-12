@@ -41,12 +41,7 @@ class RecommendationCarousel extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 FruitVegetable recommendation = recommendations[index];
                 return GestureDetector(
-                    onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => const FruitDetailScreen(),
-                          ),
-                        ),
+                    onTap: () => Get.toNamed('fruit_detail_screen'),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Stack(

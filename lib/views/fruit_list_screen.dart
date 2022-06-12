@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutria/components/fruit_carousel.dart';
 
 class FruitListScreen extends StatelessWidget {
   const FruitListScreen({Key? key}) : super(key: key);
@@ -111,7 +112,8 @@ class FruitListScreen extends StatelessWidget {
                             )),
                           ),
                         ],
-                      )
+                      ),
+                      const FruitCarousel()
                     ],
                   ),
                 )
