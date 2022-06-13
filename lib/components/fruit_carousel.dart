@@ -9,6 +9,7 @@ class FruitCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Container(
         height: 600,
         child: ListView.builder(
@@ -19,6 +20,7 @@ class FruitCarousel extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Hero(
                       tag: fruits.imageUrl,
@@ -26,19 +28,16 @@ class FruitCarousel extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10.0),
                         child: Image(
                           height: 145.0,
-                          width: 160.0,
+                          width: width * 0.43,
                           image: AssetImage(fruits.imageUrl),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
                     Container(
                       color: Colors.white,
                       height: 145.0,
-                      width: 180.0,
+                      width: width * 0.45,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,

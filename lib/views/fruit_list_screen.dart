@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:nutria/components/fruit_carousel.dart';
+import 'package:get/get.dart';
 
 class FruitListScreen extends StatelessWidget {
   const FruitListScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
@@ -14,7 +17,7 @@ class FruitListScreen extends StatelessWidget {
               children: [
                 Container(
                   color: Theme.of(context).colorScheme.primary,
-                  height: 230,
+                  height: height * 0.3,
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
@@ -31,9 +34,6 @@ class FruitListScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w700),
                           ),
                         )),
-                        SizedBox(
-                          height: 15.0,
-                        ),
                         Icon(
                           Icons.arrow_back_ios,
                           color: Colors.white,
@@ -88,28 +88,31 @@ class FruitListScreen extends StatelessWidget {
                                   fontWeight: FontWeight.w700),
                             )),
                           ),
-                          Container(
-                            height: 50,
-                            width: 140,
-                            decoration: const BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(10.0),
-                                    bottomRight: Radius.circular(10.0)),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.black26,
-                                      offset: Offset(0.0, 2.0),
-                                      blurRadius: 5.0)
-                                ]),
-                            child: Center(
-                                child: Text(
-                              'Sayuran',
-                              style: TextStyle(
-                                  color: Theme.of(context).colorScheme.primary,
-                                  fontSize: 25.0,
-                                  fontWeight: FontWeight.w700),
-                            )),
+                          GestureDetector(
+                            onTap: () => Get.toNamed('/vegetable_list_screen'),
+                            child: Container(
+                              height: 50,
+                              width: 140,
+                              decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(10.0),
+                                      bottomRight: Radius.circular(10.0)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.black26,
+                                        offset: Offset(0.0, 2.0),
+                                        blurRadius: 5.0)
+                                  ]),
+                              child: Center(
+                                  child: Text(
+                                'Sayuran',
+                                style: TextStyle(
+                                    color: Theme.of(context).colorScheme.primary,
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.w700),
+                              )),
+                            ),
                           ),
                         ],
                       ),
@@ -120,7 +123,7 @@ class FruitListScreen extends StatelessWidget {
               ],
             ),
             Positioned(
-              top: 200,
+              top: height * 0.265,
               left: MediaQuery.of(context).size.width / 14,
               right: MediaQuery.of(context).size.width / 14,
               // right: width/2,
