@@ -17,14 +17,14 @@ class FruitListScreen extends StatelessWidget {
               children: [
                 Container(
                   color: Theme.of(context).colorScheme.primary,
-                  height: height * 0.3,
+                  height: height * 0.28,
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Center(
+                      children:  [
+                        const Center(
                             child: SafeArea(
                           child: Text(
                             'Nutria',
@@ -34,14 +34,14 @@ class FruitListScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w700),
                           ),
                         )),
-                        Icon(
+                        const Icon(
                           Icons.arrow_back_ios,
                           color: Colors.white,
                         ),
                         SizedBox(
-                          height: 20.0,
+                          height: height * 0.01,
                         ),
-                        Text(
+                        const Text(
                           "Daftar Buah",
                           style: TextStyle(
                               color: Colors.white,
@@ -123,7 +123,7 @@ class FruitListScreen extends StatelessWidget {
               ],
             ),
             Positioned(
-              top: height * 0.265,
+              top: height * 0.25,
               left: MediaQuery.of(context).size.width / 14,
               right: MediaQuery.of(context).size.width / 14,
               // right: width/2,

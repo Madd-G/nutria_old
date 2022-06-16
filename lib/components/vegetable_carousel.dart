@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../models/fruit_vegetable_model.dart';
 
-class FruitCarousel extends StatelessWidget {
-  const FruitCarousel({Key? key}) : super(key: key);
+class VegetableCarousel extends StatelessWidget {
+  const VegetableCarousel({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,22 +12,22 @@ class FruitCarousel extends StatelessWidget {
         height: 600,
         child: ListView.builder(
             scrollDirection: Axis.vertical,
-            itemCount: fruits.length,
+            itemCount: vegetables.length,
             itemBuilder: (BuildContext context, int index) {
-              FruitVegetable fruit = fruits[index];
+              FruitVegetable vegetable = vegetables[index];
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Hero(
-                      tag: fruit.imageUrl,
+                      tag: vegetable.imageUrl,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10.0),
                         child: Image(
                           height: 145.0,
                           width: width * 0.43,
-                          image: AssetImage(fruit.imageUrl),
+                          image: AssetImage(vegetable.imageUrl),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -41,7 +41,7 @@ class FruitCarousel extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            fruit.title,
+                            vegetable.title,
                             style: const TextStyle(
                                 fontSize: 15.0, fontWeight: FontWeight.w500),
                           ),
@@ -54,7 +54,7 @@ class FruitCarousel extends StatelessWidget {
                                 color: Color(0xffA1A8B9), fontSize: 13.0),
                           ),
                           Text(
-                            fruit.category,
+                            vegetable.category,
                             style: TextStyle(fontSize: 12.0),
                           ),
                           const SizedBox(
@@ -63,7 +63,7 @@ class FruitCarousel extends StatelessWidget {
                           const Text('Deskripsi',
                               style: TextStyle(
                                   color: Color(0xffA1A8B9), fontSize: 13.0)),
-                          Text(fruit.description,
+                          Text(vegetable.description,
                               style: TextStyle(fontSize: 12.0))
                         ],
                       ),

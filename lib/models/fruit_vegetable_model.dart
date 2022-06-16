@@ -11,15 +11,27 @@ class FruitVegetable {
       this.description = ''});
 }
 
-final List<FruitVegetable> recommendations = [
-  FruitVegetable(imageUrl: 'assets/images/apel.png', title: 'Apel', category: 'Buah', description:
-  'Apel merupakan jenis buah-buahan, atau buah yang dihasilkan dari pohon buah '),
-  FruitVegetable(imageUrl: 'assets/images/orange.jpeg', title: 'Jeruk', category: 'Buah', description:
-  'Apel merupakan jenis buah-buahan, atau buah yang dihasilkan dari pohon buah '),
-  FruitVegetable(imageUrl: 'assets/images/orange.jpeg', title: 'Jeruk', category: 'Buah', description:
-  'Apel merupakan jenis buah-buahan, atau buah yang dihasilkan dari pohon buah '),
-  FruitVegetable(imageUrl: 'assets/images/apel.png', title: 'Apel', category: 'Buah', description:
-  'Apel merupakan jenis buah-buahan, atau buah yang dihasilkan dari pohon buah '),
+final List<FruitVegetable> vegetables = [
+  FruitVegetable(
+      imageUrl: 'assets/images/bayam.jpeg',
+      title: 'Bayam',
+      category: 'Buah',
+      description: 'Bayam merupakan jenis sayuran'),
+  FruitVegetable(
+      imageUrl: 'assets/images/bayam.jpeg',
+      title: 'Bayam',
+      category: 'Buah',
+      description: 'Bayam merupakan jenis sayuran'),
+  FruitVegetable(
+      imageUrl: 'assets/images/bayam.jpeg',
+      title: 'Bayam',
+      category: 'Buah',
+      description: 'Bayam merupakan jenis sayuran'),
+  FruitVegetable(
+      imageUrl: 'assets/images/bayam.jpeg',
+      title: 'Bayam',
+      category: 'Buah',
+      description: 'Bayam merupakan jenis sayuran'),
 ];
 
 final List<FruitVegetable> fruits = [
@@ -27,8 +39,7 @@ final List<FruitVegetable> fruits = [
       imageUrl: 'assets/images/apel.png',
       title: 'Apel',
       category: 'Buah',
-      description:
-          'Apel merupakan jenis buah-buahan,'),
+      description: 'Apel merupakan jenis buah-buahan,'),
   FruitVegetable(
       imageUrl: 'assets/images/orange.jpeg',
       title: 'Jeruk',
@@ -47,4 +58,29 @@ final List<FruitVegetable> fruits = [
       category: 'Buah',
       description:
           'Apel merupakan jenis buah-buahan, atau buah yang dihasilkan dari pohon buah '),
+];
+
+final List<FruitVegetable> recommendations = [
+  FruitVegetable(
+      imageUrl: 'assets/images/apel.png',
+      title: 'Apel',
+      category: 'Buah',
+      description:
+          'Apel merupakan jenis buah-buahan, atau buah yang dihasilkan dari pohon buah '),
+  FruitVegetable(
+      imageUrl: 'assets/images/bayam.jpeg',
+      title: 'Bayam',
+      category: 'Buah',
+      description: 'Bayam merupakan jenis sayuran'),
+  FruitVegetable(
+      imageUrl: 'assets/images/orange.jpeg',
+      title: 'Jeruk',
+      category: 'Buah',
+      description:
+          'Apel merupakan jenis buah-buahan, atau buah yang dihasilkan dari pohon buah '),
+  FruitVegetable(
+      imageUrl: 'assets/images/bayam.jpeg',
+      title: 'Bayam',
+      category: 'Buah',
+      description: 'Bayam merupakan jenis sayuran'),
 ];
