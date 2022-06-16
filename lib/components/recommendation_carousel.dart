@@ -46,16 +46,13 @@ class RecommendationCarousel extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Stack(
                         children: <Widget>[
-                          Hero(
-                            tag: recommendation.imageUrl,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10.0),
-                              child: Image(
-                                height: 180.0,
-                                width: 180.0,
-                                image: AssetImage(recommendation.imageUrl),
-                                fit: BoxFit.cover,
-                              ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image(
+                              height: 180.0,
+                              width: 180.0,
+                              image: AssetImage(recommendation.imageUrl),
+                              fit: BoxFit.cover,
                             ),
                           ),
                           Positioned(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:nutria/models/messages.dart';
 import 'package:nutria/views/camera_screen.dart';
 import 'package:nutria/views/fruit_detail_screen.dart';
 import 'package:nutria/views/fruit_list_screen.dart';
@@ -17,6 +16,7 @@ import 'package:nutria/views/vegetable_list_screen.dart';
 import 'package:nutria/views/home_screen.dart';
 
 import 'controllers/screen_controller.dart';
+import 'language.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,11 +34,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           colorScheme: ColorScheme.fromSwatch()
               .copyWith(primary: const Color(0xff58D7B7))),
-      translations: Messages(),
+      translations: Language(),
       locale: const Locale('en_US', 'EN_US'),
       fallbackLocale: const Locale('en_US', 'EN_US'),
-      home: const FruitListScreen(),
-      initialRoute: '/fruit_list_screen',
+      home: const HomeScreen(),
+      initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => const HomeScreen()),
         GetPage(

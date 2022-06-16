@@ -23,20 +23,23 @@ class VegetableListScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:  [
+                      children: [
                         const Center(
                             child: SafeArea(
-                              child: Text(
-                                'Nutria',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 30.0,
-                                    fontWeight: FontWeight.w700),
-                              ),
-                            )),
-                        const Icon(
-                          Icons.arrow_back_ios,
+                          child: Text(
+                            'Nutria',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30.0,
+                                fontWeight: FontWeight.w700),
+                          ),
+                        )),
+                        IconButton(
+                          icon: const Icon(Icons.arrow_back_ios),
                           color: Colors.white,
+                          onPressed: () {
+                            Get.toNamed('/home_screen');
+                          },
                         ),
                         SizedBox(
                           height: height * 0.01,
@@ -83,12 +86,13 @@ class VegetableListScreen extends StatelessWidget {
                                   ]),
                               child: Center(
                                   child: Text(
-                                    'Buah',
-                                    style: TextStyle(
-                                        color: Theme.of(context).colorScheme.primary,
-                                        fontSize: 25.0,
-                                        fontWeight: FontWeight.w700),
-                                  )),
+                                'Buah',
+                                style: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.w700),
+                              )),
                             ),
                           ),
                           Container(
@@ -107,12 +111,12 @@ class VegetableListScreen extends StatelessWidget {
                                 ]),
                             child: const Center(
                                 child: Text(
-                                  'Sayuran',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25.0,
-                                      fontWeight: FontWeight.w700),
-                                )),
+                              'Sayuran',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25.0,
+                                  fontWeight: FontWeight.w700),
+                            )),
                           ),
                         ],
                       ),

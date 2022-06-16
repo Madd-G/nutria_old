@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:nutria/components/recommendation_carousel.dart';
+import '../components/category_box.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
@@ -20,40 +23,40 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Center(
+                      children: [
+                        const Center(
                             child: SafeArea(
                           child: Text(
                             'Nutria',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 30.0,
+                                fontSize: 35.0,
                                 fontWeight: FontWeight.w700),
                           ),
                         )),
-                        SizedBox(
-                          height: 40.0,
-                        ),
-                        Text(
+                        const Text(
                           'Hello Alamsyah,',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600),
+                              fontSize: 27,
+                              fontWeight: FontWeight.w700),
                         ),
                         SizedBox(
-                          height: 20.0,
+                          height: height * 0.01,
                         ),
-                        Text(
+                        const Text(
                           "Let's Learn More About Fruits and Vegetables",
-                          style: TextStyle(color: Colors.white, fontSize: 15),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 40.0,
+                SizedBox(
+                  height: height * 0.06,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -86,8 +89,8 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 15.0,
+                      SizedBox(
+                        height: height * 0.03,
                       ),
                       const Align(
                         child: Text(
@@ -103,49 +106,20 @@ class HomeScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Container(
-                            height: 150,
-                            width: MediaQuery.of(context).size.width * 0.45,
-                            // width: 195,
-                            // color: Colors.white,
-                            child: Image.asset(
-                              'assets/images/buah.png',
-                              fit: BoxFit.fill,
-                            ),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                boxShadow: const [
-                                  BoxShadow(
-                                      color: Colors.black26,
-                                      offset: Offset(0.0, 2.0),
-                                      blurRadius: 5.0)
-                                ]),
-                          ),
+                          category_box(
+                              imagePath: 'assets/images/buah.png',
+                              route: '/fruit_list_screen'),
                           const SizedBox(
                             width: 10.0,
                           ),
-                          Container(
-                            height: 150,
-                            width: MediaQuery.of(context).size.width * 0.45,
-                            // width: 195,
-                            // color: Colors.white,
-                            child: Image.asset(
-                              'assets/images/sayuran.png',
-                              fit: BoxFit.fill,
-                            ),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                boxShadow: const [
-                                  BoxShadow(
-                                      color: Colors.black26,
-                                      offset: Offset(0.0, 2.0),
-                                      blurRadius: 5.0)
-                                ]),
-                          ),
+                          category_box(
+                            imagePath: 'assets/images/sayuran.png',
+                            route: '/vegetable_list_screen',
+                          )
                         ],
                       ),
-                      const SizedBox(
-                        height: 20.0,
+                      SizedBox(
+                        height: height * 0.03,
                       ),
                       const RecommendationCarousel(),
                     ],
@@ -155,8 +129,8 @@ class HomeScreen extends StatelessWidget {
             ),
             Positioned(
               top: 220,
-              left: MediaQuery.of(context).size.width / 14,
-              right: MediaQuery.of(context).size.width / 14,
+              left: width / 14,
+              right: width / 14,
               // right: width/2,
               // left: -175,
               child: Container(

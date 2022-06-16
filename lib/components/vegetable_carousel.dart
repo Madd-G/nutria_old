@@ -20,16 +20,13 @@ class VegetableCarousel extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Hero(
-                      tag: vegetable.imageUrl,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10.0),
-                        child: Image(
-                          height: 145.0,
-                          width: width * 0.43,
-                          image: AssetImage(vegetable.imageUrl),
-                          fit: BoxFit.cover,
-                        ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Image(
+                        height: 145.0,
+                        width: width * 0.43,
+                        image: AssetImage(vegetable.imageUrl),
+                        fit: BoxFit.cover,
                       ),
                     ),
                     Container(
