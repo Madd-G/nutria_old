@@ -99,7 +99,6 @@ class SignUpScreenSecond extends StatelessWidget {
                 height: 70,
               ),
               MainButton(
-                  color: Theme.of(context).colorScheme.primary,
                   title: 'Sign Up',
                   onPressed: () {
                     Get.toNamed('/upload_profile_photo_screen');

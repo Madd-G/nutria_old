@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 class MainButton extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
   const MainButton(
-      {required this.color, required this.title, required this.onPressed});
+      {required this.title, required this.onPressed});
 
-  final Color color;
   final String title;
   final VoidCallback onPressed;
 
@@ -15,7 +14,7 @@ class MainButton extends StatelessWidget {
         onPressed: onPressed,
         height: 50,
         minWidth: double.infinity,
-        color: color,
+        color: Theme.of(context).colorScheme.primary,
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
         child: Text(title,

@@ -15,8 +15,6 @@ class CategoryBox extends StatelessWidget {
       child: Container(
         height: 150,
         width: MediaQuery.of(context).size.width * 0.45,
-        // width: 195,
-        // color: Colors.white,
         child: Image.asset(
           imagePath,
           fit: BoxFit.fill,

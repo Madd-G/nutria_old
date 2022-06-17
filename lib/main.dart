@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: '/vegetable_detail_screen',
             page: () => const VegetableDetailScreen()),
-        GetPage(name: '/profile_screen', page: () => const ProfileScreen()),
+        GetPage(name: '/profile_screen', page: () =>  ProfileScreen()),
         GetPage(name: '/edit_profile_screen', page: () => const EditProfileScreen()),
         GetPage(name: '/camera_screen', page: () => const CameraScreen()),
         GetPage(name: '/screen_controller', page: () => ScreenController()),

@@ -53,7 +53,6 @@ class UploadProfilePhotoScreen extends StatelessWidget {
                 height: 70,
               ),
               MainButton(
-                  color: Theme.of(context).colorScheme.primary,
                   title: 'Upload',
                   onPressed: () {}),
               const SizedBox(

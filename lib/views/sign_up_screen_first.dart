@@ -97,7 +97,6 @@ class SignUpScreenFirst extends StatelessWidget {
                 height: 70,
               ),
               MainButton(
-                  color: Theme.of(context).colorScheme.primary,
                   title: 'Next',
                   onPressed: () {
                     Get.toNamed('/sign_up_screen_second');

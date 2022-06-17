@@ -76,7 +76,6 @@ class LoginScreen extends StatelessWidget {
                 height: 70,
               ),
               MainButton(
-                  color: Theme.of(context).colorScheme.primary,
                   title: 'Login',
                   onPressed: () {
                     Get.toNamed('/screen_controller');

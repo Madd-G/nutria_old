@@ -59,7 +59,6 @@ class SplashScreenSecond extends StatelessWidget {
                   height: 15,
                 ),
                 MainButton(
-                    color: Theme.of(context).colorScheme.primary,
                     title: "Next",
                     onPressed: () {
                       Get.toNamed('/login_screen');

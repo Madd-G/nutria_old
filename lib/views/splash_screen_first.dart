@@ -60,7 +60,6 @@ class SplashScreenFirst extends StatelessWidget {
                 ),
                 MainButton(
                   title: 'Next',
-                  color: Theme.of(context).colorScheme.primary,
                   onPressed: () {
                     Get.to(() => const SplashScreenSecond(),
                         transition: Transition.rightToLeft,

@@ -14,9 +14,7 @@ class User {
     this.language = '',
     this.gender = '',
   });
-
 }
-
 final List<User> userData = [
   User(
       username: 'Alamsyah',
