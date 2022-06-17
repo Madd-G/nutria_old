@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutria/components/recommendation_carousel.dart';
+import 'package:nutria/controllers/screen_controller.dart';
 import '../components/category_box.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,7 +21,7 @@ class HomeScreen extends StatelessWidget {
                   height: 250,
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.only(left: 16.0, right: 16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -34,6 +35,7 @@ class HomeScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w700),
                           ),
                         )),
+                        SizedBox(height: height * 0.025,),
                         const Text(
                           'Hello Alamsyah,',
                           style: TextStyle(

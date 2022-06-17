@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../components/vegetable_carousel.dart';
 
 class VegetableListScreen extends StatelessWidget {
@@ -20,7 +19,7 @@ class VegetableListScreen extends StatelessWidget {
                   height: height * 0.28,
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.only(left: 16.0, right: 16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -38,7 +37,7 @@ class VegetableListScreen extends StatelessWidget {
                           icon: const Icon(Icons.arrow_back_ios),
                           color: Colors.white,
                           onPressed: () {
-                            Get.toNamed('/home_screen');
+                            Get.toNamed('/screen_controller');
                           },
                         ),
                         SizedBox(
