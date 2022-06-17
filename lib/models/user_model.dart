@@ -15,13 +15,14 @@ class User {
     this.gender = '',
   });
 
-  final List<User> userData = [
-    User(
-        username: 'Alamsyah',
-        imagePath: 'assets/images/profile.png',
-        email: 'alamsyah@gmail.com',
-        address: 'kebumen',
-        language: 'Indonesia',
-        gender: 'Male')
-  ];
 }
+
+final List<User> userData = [
+  User(
+      username: 'Alamsyah',
+      imagePath: 'assets/images/profile.png',
+      email: 'alamsyah@gmail.com',
+      address: 'kebumen',
+      language: 'Indonesia',
+      gender: 'Male')
+];

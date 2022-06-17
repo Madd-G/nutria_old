@@ -7,6 +7,7 @@ class GenderRadioButton extends StatelessWidget {
   final String value;
   final String title;
 
+  // ignore: use_key_in_widget_constructors
   const GenderRadioButton({required this.value, required this.title});
 
   @override

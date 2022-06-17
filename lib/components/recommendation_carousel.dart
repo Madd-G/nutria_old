@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nutria/views/fruit_detail_screen.dart';
 import '../models/fruit_vegetable_model.dart';
 
 class RecommendationCarousel extends StatelessWidget {
@@ -33,7 +32,7 @@ class RecommendationCarousel extends StatelessWidget {
           ),
         ],
       ),
-      Container(
+      SizedBox(
           height: 200.0,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,

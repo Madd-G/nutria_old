@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nutria/views/fruit_list_screen.dart';
 import '../views/camera_screen.dart';
-import '../views/edit_profile_screen.dart';
 import '../views/home_screen.dart';
 import '../views/profile_screen.dart';
 
@@ -14,7 +12,7 @@ class ScreenController extends StatelessWidget {
   final screens = [
     const CameraScreen(),
     const HomeScreen(),
-    const EditProfileScreen(),
+    const ProfileScreen(),
   ];
 
   @override

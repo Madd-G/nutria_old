@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nutria/components/fruit_carousel.dart';
 import 'package:get/get.dart';
 
-import 'camera_screen.dart';
-import 'edit_profile_screen.dart';
-import 'home_screen.dart';
-
 class FruitListScreen extends StatelessWidget {
   FruitListScreen({Key? key}) : super(key: key);
   final RxInt _currentIndex = 1.obs;

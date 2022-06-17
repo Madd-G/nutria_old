@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
   const MainButton(
       {required this.color, required this.title, required this.onPressed});
 

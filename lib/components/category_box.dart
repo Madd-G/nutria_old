@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class category_box extends StatelessWidget {
-  final imagePath;
-  final route;
+class CategoryBox extends StatelessWidget {
+  final String imagePath;
+  final String route;
 
-  category_box({required this.imagePath, required this.route});
+  // ignore: use_key_in_widget_constructors
+  const CategoryBox({required this.imagePath, required this.route});
 
   @override
   Widget build(BuildContext context) {

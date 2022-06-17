@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../components/text_input_decoration.dart';
-import '../controllers/controller.dart';
 import '../controllers/translations_controller.dart';
 
 class EditProfileScreen extends StatelessWidget {
@@ -12,7 +11,6 @@ class EditProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Controller c = Get.put<Controller>(Controller());
     var height = MediaQuery.of(context).size.height;
     final languages = ['English', 'Indonesia'];
     final messageController = Get.put(MessagesController());

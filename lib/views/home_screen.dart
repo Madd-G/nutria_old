@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nutria/components/recommendation_carousel.dart';
-import 'package:nutria/controllers/screen_controller.dart';
 import '../components/category_box.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -107,14 +106,14 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          category_box(
+                        children: const [
+                          CategoryBox(
                               imagePath: 'assets/images/buah.png',
                               route: '/fruit_list_screen'),
-                          const SizedBox(
+                          SizedBox(
                             width: 10.0,
                           ),
-                          category_box(
+                          CategoryBox(
                             imagePath: 'assets/images/sayuran.png',
                             route: '/vegetable_list_screen',
                           )

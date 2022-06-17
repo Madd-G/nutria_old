@@ -8,7 +8,7 @@ class FruitCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    return Container(
+    return SizedBox(
         height: 600,
         child: ListView.builder(
             scrollDirection: Axis.vertical,
@@ -52,7 +52,7 @@ class FruitCarousel extends StatelessWidget {
                           ),
                           Text(
                             fruit.category,
-                            style: TextStyle(fontSize: 12.0),
+                            style: const TextStyle(fontSize: 12.0),
                           ),
                           const SizedBox(
                             height: 5.0,
@@ -61,7 +61,7 @@ class FruitCarousel extends StatelessWidget {
                               style: TextStyle(
                                   color: Color(0xffA1A8B9), fontSize: 13.0)),
                           Text(fruit.description,
-                              style: TextStyle(fontSize: 12.0))
+                              style: const TextStyle(fontSize: 12.0))
                         ],
                       ),
                     )
