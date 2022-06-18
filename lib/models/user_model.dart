@@ -15,6 +15,7 @@ class User {
     this.gender = '',
   });
 }
+
 final List<User> userData = [
   User(
       username: 'Alamsyah',

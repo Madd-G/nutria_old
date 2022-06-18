@@ -23,17 +23,45 @@ class ProfileScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const SafeArea(
-                    child: Text(
-                  'Profile',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.w700),
+                  SafeArea(
+                    child: Center(
+                      child: Stack(children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                  width: 5,
+                                  color: Theme.of(context).colorScheme.primary),
+                              image: const DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage('assets/images/profile.png'),
+                              )),
+                          height: 100,
+                          width: 100,
+                          padding: const EdgeInsets.all(8.0),
+                        ),
+                        Positioned(
+                            bottom: 7,
+                            right: 7,
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0xff3F897F)
+                              ),
+                              height: 30,
+                              width: 30,
+                              child: const Icon(Icons.add, color: Colors.white,),
+                            ))
+                      ]),
                     ),
                   ),
-                  SizedBox(height: height * 0.07,),
-                  Text(userController.username.value, style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),)
+                  Text(
+                    userController.username.value,
+                    style: const TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white),
+                  )
                 ],
               ),
             ),
@@ -55,8 +83,8 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   Text(
                     userController.username.value,
-                    style:
-                        const TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w500, fontSize: 20.0),
                   ),
                   SizedBox(
                     height: height * 0.004,
@@ -81,8 +109,8 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   Text(
                     userController.email.value,
-                    style:
-                        const TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w500, fontSize: 20.0),
                   ),
                   SizedBox(
                     height: height * 0.004,
@@ -107,8 +135,8 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   Text(
                     userController.address.value,
-                    style:
-                        const TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w500, fontSize: 20.0),
                   ),
                   SizedBox(
                     height: height * 0.004,
@@ -133,8 +161,8 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   Text(
                     userController.language.value,
-                    style:
-                        const TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w500, fontSize: 20.0),
                   ),
                   SizedBox(
                     height: height * 0.004,
@@ -159,8 +187,8 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   Text(
                     userController.gender.value,
-                    style:
-                        const TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w500, fontSize: 20.0),
                   ),
                   SizedBox(
                     height: height * 0.004,
@@ -173,8 +201,12 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     height: height * 0.02,
                   ),
-                  SizedBox(height: height * 0.05,),
-                  MainButton(title: 'Edit Profile', onPressed: () {})
+                  SizedBox(
+                    height: height * 0.05,
+                  ),
+                  MainButton(title: 'Edit Profile', onPressed: () {
+                    Get.toNamed('/edit_profile_screen');
+                  })
                 ],
               ))
         ],

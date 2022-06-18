@@ -12,7 +12,7 @@ class ScreenController extends StatelessWidget {
   final screens = [
     const CameraScreen(),
     const HomeScreen(),
-     ProfileScreen(),
+    ProfileScreen(),
   ];
 
   @override

@@ -34,7 +34,9 @@ class HomeScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w700),
                           ),
                         )),
-                        SizedBox(height: height * 0.025,),
+                        SizedBox(
+                          height: height * 0.025,
+                        ),
                         const Text(
                           'Hello Alamsyah,',
                           style: TextStyle(

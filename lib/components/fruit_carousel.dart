@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../models/fruit_vegetable_model.dart';
 
 class FruitCarousel extends StatelessWidget {

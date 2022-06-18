@@ -15,7 +15,6 @@ import 'package:nutria/views/upload_profile_photo_screen.dart';
 import 'package:nutria/views/vegetable_detail_screen.dart';
 import 'package:nutria/views/vegetable_list_screen.dart';
 import 'package:nutria/views/home_screen.dart';
-
 import 'controllers/screen_controller.dart';
 import 'language.dart';
 
@@ -56,8 +55,7 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: '/upload_profile_photo_screen',
             page: () => const UploadProfilePhotoScreen()),
-        GetPage(
-            name: '/fruit_list_screen', page: () => FruitListScreen()),
+        GetPage(name: '/fruit_list_screen', page: () => FruitListScreen()),
         GetPage(
             name: '/vegetable_list_screen',
             page: () => const VegetableListScreen()),
@@ -67,8 +65,8 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: '/vegetable_detail_screen',
             page: () => const VegetableDetailScreen()),
-        GetPage(name: '/profile_screen', page: () =>  ProfileScreen()),
-        GetPage(name: '/edit_profile_screen', page: () => const EditProfileScreen()),
+        GetPage(name: '/profile_screen', page: () => ProfileScreen()),
+        GetPage(name: '/edit_profile_screen', page: () => EditProfileScreen()),
         GetPage(name: '/camera_screen', page: () => const CameraScreen()),
         GetPage(name: '/screen_controller', page: () => ScreenController()),
       ],

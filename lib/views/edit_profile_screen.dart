@@ -1,19 +1,15 @@
-import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../components/text_input_decoration.dart';
-import '../controllers/translations_controller.dart';
+import '../components/main_button.dart';
+import '../controllers/user_controller.dart';
 
 class EditProfileScreen extends StatelessWidget {
-  const EditProfileScreen({Key? key}) : super(key: key);
-
+  EditProfileScreen({Key? key}) : super(key: key);
+  final UserController userController = Get.put(UserController());
 
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    final languages = ['English', 'Indonesia'];
-    final messageController = Get.put(MessagesController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -25,73 +21,180 @@ class EditProfileScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Center(
-                        child: SafeArea(
-                      child: Text(
-                        'Nutria',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.w700),
+                    SafeArea(
+                      child: Center(
+                        child: Stack(children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                    width: 5,
+                                    color:
+                                        Theme.of(context).colorScheme.primary),
+                                image: const DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image:
+                                      AssetImage('assets/images/profile.png'),
+                                )),
+                            height: 100,
+                            width: 100,
+                            padding: const EdgeInsets.all(8.0),
+                          ),
+                          Positioned(
+                              bottom: 7,
+                              right: 7,
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xff3F897F)),
+                                height: 30,
+                                width: 30,
+                                child: const Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                ),
+                              ))
+                        ]),
                       ),
-                    )),
-                    IconButton(
-                      icon: const Icon(Icons.arrow_back_ios),
-                      color: Colors.white,
-                      onPressed: () {
-                        Get.toNamed('/screen_controller');
-                      },
                     ),
-                    SizedBox(
-                      height: height * 0.01,
-                    ),
-                    const Text(
-                      "Daftar Buah",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 35,
-                          fontWeight: FontWeight.w700),
-                    ),
+                    Text(
+                      userController.username.value,
+                      style: const TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white),
+                    )
                   ],
                 ),
               ),
             ),
             Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(30.0),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const Text(
+                      'Username',
+                      style: TextStyle(
+                          color: Color(0xFFD3D3D3),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20.0),
+                    ),
+                    SizedBox(
+                      height: height * 0.005,
+                    ),
                     TextField(
-                        keyboardType: TextInputType.name,
-                        decoration: textInputDecoration.copyWith(
-                            hintText: 'Username',
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Theme.of(context).colorScheme.primary)))),
-                    const SizedBox(height: 20),
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                          hintText: userController.username.value),
+                    ),
+                    Container(
+                      height: 2.0,
+                      width: double.infinity,
+                      color: const Color(0xFFD3D3D3),
+                    ),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    const Text(
+                      'Email',
+                      style: TextStyle(
+                          color: Color(0xFFD3D3D3),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20.0),
+                    ),
+                    SizedBox(
+                      height: height * 0.005,
+                    ),
                     TextField(
-                        keyboardType: TextInputType.streetAddress,
-                        decoration: textInputDecoration.copyWith(
-                            hintText: 'Address',
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Theme.of(context).colorScheme.primary)))),
-                    const SizedBox(height: 20),
-                    DropdownSearch<String>(
-                        mode: Mode.MENU,
-                        showSelectedItem: true,
-                        items: languages,
-                        label: "Language",
-                        hint: "select language",
-                        selectedItem: "English",
-                        onChanged: (String? data) {
-                          if (data == 'English') {
-                            messageController.changeLanguage('en_US', 'id');
-                          } else if (data == "Indonesia") {
-                            messageController.changeLanguage('id', 'en_US');
-                          }
-                        }),
+                      keyboardType: TextInputType.text,
+                      decoration:
+                          InputDecoration(hintText: userController.email.value),
+                    ),
+                    Container(
+                      height: 2.0,
+                      width: double.infinity,
+                      color: const Color(0xFFD3D3D3),
+                    ),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    const Text(
+                      'Address',
+                      style: TextStyle(
+                          color: Color(0xFFD3D3D3),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20.0),
+                    ),
+                    SizedBox(
+                      height: height * 0.005,
+                    ),
+                    TextField(
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                          hintText: userController.address.value),
+                    ),
+                    Container(
+                      height: 2.0,
+                      width: double.infinity,
+                      color: const Color(0xFFD3D3D3),
+                    ),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    const Text(
+                      'Language',
+                      style: TextStyle(
+                          color: Color(0xFFD3D3D3),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20.0),
+                    ),
+                    SizedBox(
+                      height: height * 0.005,
+                    ),
+                    TextField(
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                          hintText: userController.language.value),
+                    ),
+                    Container(
+                      height: 2.0,
+                      width: double.infinity,
+                      color: const Color(0xFFD3D3D3),
+                    ),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    const Text(
+                      'Gender',
+                      style: TextStyle(
+                          color: Color(0xFFD3D3D3),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20.0),
+                    ),
+                    SizedBox(
+                      height: height * 0.005,
+                    ),
+                    TextField(
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                          hintText: userController.gender.value),
+                    ),
+                    Container(
+                      height: 2.0,
+                      width: double.infinity,
+                      color: const Color(0xFFD3D3D3),
+                    ),
+                    SizedBox(
+                      height: height * 0.02,
+                    ),
+                    SizedBox(
+                      height: height * 0.05,
+                    ),
+                    MainButton(title: 'Save', onPressed: () {})
                   ],
                 ))
           ],
@@ -100,3 +203,18 @@ class EditProfileScreen extends StatelessWidget {
     );
   }
 }
+
+// DropdownSearch<String>(
+// mode: Mode.MENU,
+// showSelectedItem: true,
+// items: languages,
+// label: "Language",
+// hint: "select language",
+// selectedItem: "English",
+// onChanged: (String? data) {
+// if (data == 'English') {
+// messageController.changeLanguage('en_US', 'id');
+// } else if (data == "Indonesia") {
+// messageController.changeLanguage('id', 'en_US');
+// }
+// }),
