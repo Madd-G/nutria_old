@@ -16,34 +16,32 @@ class VegetableListScreen extends StatelessWidget {
               children: [
                 Container(
                   color: Theme.of(context).colorScheme.primary,
-                  height: height * 0.28,
+                  height: height * 0.23,
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 16.0, right: 16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Center(
-                            child: SafeArea(
-                          child: Text(
-                            'Nutria',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30.0,
-                                fontWeight: FontWeight.w700),
-                          ),
-                        )),
-                        IconButton(
-                          icon: const Icon(Icons.arrow_back_ios),
-                          color: Colors.white,
-                          onPressed: () {
-                            Get.toNamed('/screen_controller');
-                          },
-                        ),
-                        SizedBox(
-                          height: height * 0.01,
-                        ),
-                        const Text(
+                      children: const [
+                            SafeArea(
+                              child: Center(
+                                child: Text(
+                                  'Nutria',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 30.0,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                            ),
+                        // IconButton(
+                        //   icon: const Icon(Icons.arrow_back_ios),
+                        //   color: Colors.white,
+                        //   onPressed: () {
+                        //     Get.toNamed('/screen_controller');
+                        //   },
+                        // ),
+                        Text(
                           "Daftar Sayuran",
                           style: TextStyle(
                               color: Colors.white,
@@ -119,6 +117,9 @@ class VegetableListScreen extends StatelessWidget {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: height * 0.03,
+                      ),
                       const VegetableCarousel()
                     ],
                   ),
@@ -126,7 +127,7 @@ class VegetableListScreen extends StatelessWidget {
               ],
             ),
             Positioned(
-              top: height * 0.25,
+              top: height * 0.197,
               left: MediaQuery.of(context).size.width / 14,
               right: MediaQuery.of(context).size.width / 14,
               // right: width/2,
