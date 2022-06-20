@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nutria/views/fruit_detail_screen.dart';
 import '../models/fruit_vegetable_model.dart';
+import 'package:get/get.dart';
 
 class FruitCarousel extends StatelessWidget {
   const FruitCarousel({Key? key}) : super(key: key);
@@ -21,11 +23,14 @@ class FruitCarousel extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image(
-                      height: height * 0.16,
-                      width: width * 0.43,
-                      image: AssetImage(fruit.imageUrl),
-                      fit: BoxFit.cover,
+                    GestureDetector(
+                      onTap: () => Get.to(FruitDetailScreen(detailFruitVegetable: fruit)),
+                      child: Image(
+                        height: height * 0.16,
+                        width: width * 0.43,
+                        image: AssetImage(fruit.imageUrl),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Container(
                       color: Colors.white,
@@ -60,6 +65,7 @@ class FruitCarousel extends StatelessWidget {
                                   color: Color(0xffA1A8B9), fontSize: 13.0)),
                           Flexible(
                             child: Text(fruit.description,
+                                textAlign: TextAlign.justify,
                                 style: const TextStyle(fontSize: 12.0, overflow: TextOverflow.clip)),
                           )
                         ],

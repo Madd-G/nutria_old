@@ -59,9 +59,9 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: '/vegetable_list_screen',
             page: () => const VegetableListScreen()),
-        GetPage(
-            name: '/fruit_detail_screen',
-            page: () => const FruitDetailScreen()),
+        // GetPage(
+        //     name: '/fruit_detail_screen',
+        //     page: () => const FruitDetailScreen(detailFruitVegetable: ,)),
         GetPage(
             name: '/vegetable_detail_screen',
             page: () => const VegetableDetailScreen()),
