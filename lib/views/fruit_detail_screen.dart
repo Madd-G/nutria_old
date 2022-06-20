@@ -51,7 +51,7 @@ class _FruitDetailScreenState extends State<FruitDetailScreen> {
                     ),
                     Text(
                       widget.detailFruitVegetable.category,
-                      style: TextStyle(fontSize: 16.0),
+                      style: const TextStyle(fontSize: 16.0),
                     ),
                     SizedBox(
                       height: height * 0.025,

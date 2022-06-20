@@ -3,8 +3,7 @@ import 'package:nutria/components/fruit_carousel.dart';
 import 'package:get/get.dart';
 
 class FruitListScreen extends StatelessWidget {
-  FruitListScreen({Key? key}) : super(key: key);
-  final RxInt _currentIndex = 1.obs;
+  const FruitListScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -164,30 +163,30 @@ class FruitListScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Obx(
-        () => (BottomNavigationBar(
-          currentIndex: _currentIndex.value,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.camera_alt),
-              label: 'SCAN',
-            ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'HOME',
-            ),
-            BottomNavigationBarItem(
-                icon: GestureDetector(
-                    onTap: () => Get.toNamed('/profile_screen'),
-                    child: Icon(Icons.person)),
-                label: 'PROFILE'),
-          ],
-          onTap: (index) {
-            _currentIndex.value = index;
-          },
-        )),
-      ),
+      // bottomNavigationBar: Obx(
+      //   () => (BottomNavigationBar(
+      //     currentIndex: _currentIndex.value,
+      //     type: BottomNavigationBarType.fixed,
+      //     items: [
+      //       const BottomNavigationBarItem(
+      //         icon: Icon(Icons.camera_alt),
+      //         label: 'SCAN',
+      //       ),
+      //       const BottomNavigationBarItem(
+      //         icon: Icon(Icons.home),
+      //         label: 'HOME',
+      //       ),
+      //       BottomNavigationBarItem(
+      //           icon: GestureDetector(
+      //               onTap: () => Get.toNamed('/profile_screen'),
+      //               child: Icon(Icons.person)),
+      //           label: 'PROFILE'),
+      //     ],
+      //     onTap: (index) {
+      //       _currentIndex.value = index;
+      //     },
+      //   )),
+      // ),
     );
   }
 }
