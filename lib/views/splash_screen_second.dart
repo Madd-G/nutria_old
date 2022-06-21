@@ -26,8 +26,8 @@ class SplashScreenSecond extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                const Text(
-                    'Find Out The Nutritions and Benefits of\nFruits and Vegetables',
+                Text(
+                    'Find Out The Nutritions and Benefits of\nFruits and Vegetables'.tr,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center),
                 const SizedBox(
@@ -58,7 +58,7 @@ class SplashScreenSecond extends StatelessWidget {
                   height: 15,
                 ),
                 MainButton(
-                    title: "Next",
+                    title: "Next".tr,
                     onPressed: () {
                       Get.toNamed('/login_screen');
                     })

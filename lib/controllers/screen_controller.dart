@@ -11,7 +11,7 @@ class ScreenController extends StatelessWidget {
 
   final screens = [
     const CameraScreen(),
-    const HomeScreen(),
+    HomeScreen(),
     ProfileScreen(),
   ];
 
@@ -22,17 +22,17 @@ class ScreenController extends StatelessWidget {
         bottomNavigationBar: Obx(() => (BottomNavigationBar(
               currentIndex: _currentIndex.value,
               type: BottomNavigationBarType.fixed,
-              items: const [
+              items: [
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.camera_alt),
-                  label: 'SCAN',
+                  icon: const Icon(Icons.camera_alt),
+                  label: 'SCAN'.tr,
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'HOME',
+                  icon: const Icon(Icons.home),
+                  label: 'HOME'.tr,
                 ),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.person), label: 'PROFILE'),
+                    icon: const Icon(Icons.person), label: 'PROFILE'.tr),
               ],
               onTap: (index) {
                 _currentIndex.value = index;

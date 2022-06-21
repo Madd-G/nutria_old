@@ -14,7 +14,7 @@ import 'package:nutria/views/upload_profile_photo_screen.dart';
 import 'package:nutria/views/vegetable_list_screen.dart';
 import 'package:nutria/views/home_screen.dart';
 import 'controllers/screen_controller.dart';
-import 'language.dart';
+import 'dictionary.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,13 +32,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           colorScheme: ColorScheme.fromSwatch()
               .copyWith(primary: const Color(0xff58D7B7))),
-      translations: Language(),
+      translations: Dictionary(),
       locale: const Locale('en_US', 'EN_US'),
       fallbackLocale: const Locale('en_US', 'EN_US'),
-      home: ScreenController(),
-      initialRoute: '/screen_controller',
+      home: const LoginScreen(),
+      initialRoute: '/login_screen',
       getPages: [
-        GetPage(name: '/', page: () => const HomeScreen()),
+        GetPage(name: '/', page: () => HomeScreen()),
         GetPage(
             name: '/splash_screen_first',
             page: () => const SplashScreenFirst()),

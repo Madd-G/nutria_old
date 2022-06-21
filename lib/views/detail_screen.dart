@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:nutria/models/fruit_vegetable_model.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -30,18 +31,9 @@ class _DetailScreenState extends State<DetailScreen> {
                       widget.detailFruitVegetable.imageUrl,
                     )),
               ),
-              // decoration: const BoxDecoration(
-              //   boxShadow: [
-              //     BoxShadow(
-              //       color: Colors.black26,
-              //       offset: Offset(0.0, 1.0),
-              //       blurRadius: 2.0,
-              //     ),
-              //   ],
-              // ),
             ),
             Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,9 +46,9 @@ class _DetailScreenState extends State<DetailScreen> {
                     SizedBox(
                       height: height * 0.025,
                     ),
-                    const Text(
-                      'Kategori',
-                      style: TextStyle(
+                    Text(
+                      'Category'.tr,
+                      style: const TextStyle(
                           fontSize: 20.0, fontWeight: FontWeight.w600),
                     ),
                     SizedBox(
@@ -69,8 +61,8 @@ class _DetailScreenState extends State<DetailScreen> {
                     SizedBox(
                       height: height * 0.025,
                     ),
-                    const Text('Deskripsi',
-                        style: TextStyle(
+                    Text('Description'.tr,
+                        style: const TextStyle(
                             fontSize: 20.0, fontWeight: FontWeight.w600)),
                     SizedBox(
                       height: height * 0.01,

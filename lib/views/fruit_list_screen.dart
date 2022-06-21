@@ -44,9 +44,9 @@ class FruitListScreen extends StatelessWidget {
                         SizedBox(
                           height: height * 0.025,
                         ),
-                        const Text(
-                          "Daftar Buah",
-                          style: TextStyle(
+                        Text(
+                          "Fruit List".tr,
+                          style: const TextStyle(
                               color: Colors.white,
                               fontSize: 35,
                               fontWeight: FontWeight.w700),
@@ -82,10 +82,10 @@ class FruitListScreen extends StatelessWidget {
                                       offset: Offset(0.0, 2.0),
                                       blurRadius: 5.0)
                                 ]),
-                            child: const Center(
+                            child: Center(
                                 child: Text(
-                              'Buah',
-                              style: TextStyle(
+                              'Fruit'.tr,
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 25.0,
                                   fontWeight: FontWeight.w700),
@@ -110,7 +110,7 @@ class FruitListScreen extends StatelessWidget {
                                   ]),
                               child: Center(
                                   child: Text(
-                                'Sayuran',
+                                'Vegetable'.tr,
                                 style: TextStyle(
                                     color:
                                         Theme.of(context).colorScheme.primary,
@@ -150,45 +150,21 @@ class FruitListScreen extends StatelessWidget {
                             spreadRadius: 1.0)
                       ],
                       borderRadius: BorderRadius.circular(30.0)),
-                  child: const Padding(
-                      padding: EdgeInsets.all(20.0),
+                  child: Padding(
+                      padding: const EdgeInsets.all(20.0),
                       child: TextField(
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
-                            hintText: 'Temukan buah favorit anda',
-                            contentPadding: EdgeInsets.symmetric(
+                            hintText: 'Find your favorite fruit'.tr,
+                            contentPadding: const EdgeInsets.symmetric(
                                 vertical: 8.0, horizontal: 15.0),
-                            prefixIcon: Icon(Icons.search),
+                            prefixIcon: const Icon(Icons.search),
                             border: InputBorder.none),
                       ))),
             ),
           ],
         ),
       ),
-      // bottomNavigationBar: Obx(
-      //   () => (BottomNavigationBar(
-      //     currentIndex: _currentIndex.value,
-      //     type: BottomNavigationBarType.fixed,
-      //     items: [
-      //       const BottomNavigationBarItem(
-      //         icon: Icon(Icons.camera_alt),
-      //         label: 'SCAN',
-      //       ),
-      //       const BottomNavigationBarItem(
-      //         icon: Icon(Icons.home),
-      //         label: 'HOME',
-      //       ),
-      //       BottomNavigationBarItem(
-      //           icon: GestureDetector(
-      //               onTap: () => Get.toNamed('/profile_screen'),
-      //               child: Icon(Icons.person)),
-      //           label: 'PROFILE'),
-      //     ],
-      //     onTap: (index) {
-      //       _currentIndex.value = index;
-      //     },
-      //   )),
-      // ),
     );
   }
 }

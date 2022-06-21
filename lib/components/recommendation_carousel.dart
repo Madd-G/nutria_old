@@ -12,17 +12,18 @@ class RecommendationCarousel extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Align(
+          Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              'Rekomendasi',
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
+              'Recommendation'.tr,
+              style:
+                  const TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
             ),
           ),
           GestureDetector(
             onTap: () => Get.toNamed('fruit_list_screen'),
             child: Text(
-              'See All',
+              'See All'.tr,
               style: TextStyle(
                 color: Theme.of(context).primaryColor,
                 fontSize: 16.0,

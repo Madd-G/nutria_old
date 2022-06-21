@@ -24,8 +24,8 @@ class VegetableListScreen extends StatelessWidget {
                         left: 16.0, right: 16.0, top: 8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        SafeArea(
+                      children: [
+                        const SafeArea(
                           child: Center(
                             child: Text(
                               'Nutria',
@@ -44,8 +44,8 @@ class VegetableListScreen extends StatelessWidget {
                         //   },
                         // ),
                         Text(
-                          "Daftar Sayuran",
-                          style: TextStyle(
+                          "Vegetable List".tr,
+                          style: const TextStyle(
                               color: Colors.white,
                               fontSize: 35,
                               fontWeight: FontWeight.w700),
@@ -86,7 +86,7 @@ class VegetableListScreen extends StatelessWidget {
                                   ]),
                               child: Center(
                                   child: Text(
-                                'Buah',
+                                'Fruit'.tr,
                                 style: TextStyle(
                                     color:
                                         Theme.of(context).colorScheme.primary,
@@ -109,10 +109,10 @@ class VegetableListScreen extends StatelessWidget {
                                       offset: Offset(0.0, 2.0),
                                       blurRadius: 5.0)
                                 ]),
-                            child: const Center(
+                            child: Center(
                                 child: Text(
-                              'Sayuran',
-                              style: TextStyle(
+                              'Vegetable'.tr,
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 25.0,
                                   fontWeight: FontWeight.w700),
@@ -149,15 +149,15 @@ class VegetableListScreen extends StatelessWidget {
                             spreadRadius: 1.0)
                       ],
                       borderRadius: BorderRadius.circular(30.0)),
-                  child: const Padding(
-                      padding: EdgeInsets.all(20.0),
+                  child: Padding(
+                      padding: const EdgeInsets.all(20.0),
                       child: TextField(
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
-                            hintText: 'Temukan sayuran favorit anda',
-                            contentPadding: EdgeInsets.symmetric(
+                            hintText: 'Find your favorite vegetable'.tr,
+                            contentPadding: const EdgeInsets.symmetric(
                                 vertical: 8.0, horizontal: 15.0),
-                            prefixIcon: Icon(Icons.search),
+                            prefixIcon: const Icon(Icons.search),
                             border: InputBorder.none),
                       ))),
             ),

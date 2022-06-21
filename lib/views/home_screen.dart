@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:nutria/components/recommendation_carousel.dart';
 import '../components/category_box.dart';
+import '../controllers/user_controller.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+  final UserController userController = Get.put(UserController());
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +40,9 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(
                           height: height * 0.025,
                         ),
-                        const Text(
-                          'Hello Alamsyah,',
-                          style: TextStyle(
+                        Text(
+                          'Hello '.trParams({'username' : '${userController.username.value}'}),
+                          style: const TextStyle(
                               color: Colors.white,
                               fontSize: 27,
                               fontWeight: FontWeight.w700),
@@ -47,9 +50,9 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(
                           height: height * 0.01,
                         ),
-                        const Text(
-                          "Let's Learn More About Fruits and Vegetables",
-                          style: TextStyle(
+                        Text(
+                          'Let\'s Learn More About Fruits and Vegetables'.tr,
+                          style: const TextStyle(
                               color: Colors.white,
                               fontSize: 17,
                               fontWeight: FontWeight.w500),
@@ -80,9 +83,9 @@ class HomeScreen extends StatelessWidget {
                                 const SizedBox(
                                   width: 18.0,
                                 ),
-                                const Text(
-                                  'SCAN UNTUK MENGETAHUI\nJENIS BUAH ATAU SAYURAN',
-                                  style: TextStyle(
+                                Text(
+                                  'SCAN TO KNOW THE TYPE\nOF FRUIT OR VEGETABLE'.tr,
+                                  style: const TextStyle(
                                       fontSize: 18.0,
                                       fontWeight: FontWeight.w700,
                                       color: Colors.white),
@@ -95,10 +98,10 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: height * 0.03,
                       ),
-                      const Align(
+                      Align(
                         child: Text(
-                          'Kategori',
-                          style: TextStyle(
+                          'Category'.tr,
+                          style: const TextStyle(
                               fontSize: 20.0, fontWeight: FontWeight.w600),
                         ),
                         alignment: Alignment.centerLeft,
@@ -108,16 +111,17 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
+                        children: [
                           CategoryBox(
                               imagePath: 'assets/images/buah.png',
-                              route: '/fruit_list_screen'),
-                          SizedBox(
+                              route: '/fruit_list_screen', label: 'Fruit'.tr,),
+                          const SizedBox(
                             width: 10.0,
                           ),
                           CategoryBox(
                             imagePath: 'assets/images/sayuran.png',
                             route: '/vegetable_list_screen',
+                            label: 'Vegetable'.tr,
                           )
                         ],
                       ),
@@ -150,15 +154,15 @@ class HomeScreen extends StatelessWidget {
                             spreadRadius: 1.0)
                       ],
                       borderRadius: BorderRadius.circular(30.0)),
-                  child: const Padding(
-                      padding: EdgeInsets.all(20.0),
+                  child: Padding(
+                      padding: const EdgeInsets.all(20.0),
                       child: TextField(
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
-                            hintText: 'Cari Buah dan Sayuran',
-                            contentPadding: EdgeInsets.symmetric(
+                            hintText: 'Find fruits or vegetables'.tr,
+                            contentPadding: const EdgeInsets.symmetric(
                                 vertical: 8.0, horizontal: 15.0),
-                            prefixIcon: Icon(Icons.search),
+                            prefixIcon: const Icon(Icons.search),
                             border: InputBorder.none),
                       ))),
             ),

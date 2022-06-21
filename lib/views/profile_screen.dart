@@ -73,9 +73,9 @@ class ProfileScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Username',
-                    style: TextStyle(
+                  Text(
+                    'Username'.tr,
+                    style: const TextStyle(
                         color: Color(0xFFD3D3D3),
                         fontWeight: FontWeight.w500,
                         fontSize: 20.0),

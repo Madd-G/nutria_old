@@ -21,7 +21,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 45,
               ),
-              Text("Login",
+              Text("Login".tr,
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontSize: 40,
@@ -29,9 +29,9 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              const Text(
-                "Enter your email address and\npassword to access your account",
-                style: TextStyle(fontSize: 20),
+              Text(
+                "Enter your email address and\npassword to access your account".tr,
+                style: const TextStyle(fontSize: 20),
               ),
               const SizedBox(
                 height: 35,
@@ -68,7 +68,7 @@ class LoginScreen extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.centerRight,
-                child: Text('Forgot Password?',
+                child: Text('Forgot Password?'.tr,
                     style: TextStyle(
                         color: Theme.of(context).colorScheme.primary)),
               ),
@@ -76,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                 height: 70,
               ),
               MainButton(
-                  title: 'Login',
+                  title: 'Login'.tr,
                   onPressed: () {
                     Get.toNamed('/screen_controller');
                   }),
@@ -86,13 +86,13 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Don\'t have an account? ',
+                  Text(
+                    'Don\'t have an account? '.tr,
                     style: TextStyle(fontSize: 17),
                   ),
                   GestureDetector(
                     onTap: () => Get.toNamed('/sign_up_screen_first'),
-                    child: Text('Sign Up',
+                    child: Text('Sign Up'.tr,
                         style: TextStyle(
                             fontSize: 17,
                             color: Theme.of(context).colorScheme.primary)),

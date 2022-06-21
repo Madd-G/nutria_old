@@ -18,7 +18,7 @@ class UploadProfilePhotoScreen extends StatelessWidget {
               const SizedBox(
                 height: 35,
               ),
-              Text("Upload profile photo",
+              Text("Upload profile photo".tr,
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontSize: 37,
@@ -26,9 +26,9 @@ class UploadProfilePhotoScreen extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              const Text(
-                "Have a favorite photo?\nUpload now",
-                style: TextStyle(fontSize: 20),
+              Text(
+                "Have a favorite photo?\nUpload now".tr,
+                style: const TextStyle(fontSize: 20),
               ),
               const SizedBox(
                 height: 35,
@@ -52,14 +52,14 @@ class UploadProfilePhotoScreen extends StatelessWidget {
               const SizedBox(
                 height: 70,
               ),
-              MainButton(title: 'Upload', onPressed: () {}),
+              MainButton(title: 'Upload'.tr, onPressed: () {}),
               const SizedBox(
                 height: 30,
               ),
               Center(
                 child: GestureDetector(
                   onTap: () => Get.toNamed('/screen_controller'),
-                  child: const Text('Skip', style: TextStyle(fontSize: 17)),
+                  child: Text('Skip'.tr, style: const TextStyle(fontSize: 17)),
                 ),
               )
             ],

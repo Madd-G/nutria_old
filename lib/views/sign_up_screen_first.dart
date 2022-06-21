@@ -40,7 +40,7 @@ class SignUpScreenFirst extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Text("Sign Up",
+              Text("Sign Up".tr,
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontSize: 40,
@@ -59,7 +59,7 @@ class SignUpScreenFirst extends StatelessWidget {
               TextField(
                   keyboardType: TextInputType.name,
                   decoration: textInputDecoration.copyWith(
-                      hintText: 'Username',
+                      hintText: 'Username'.tr,
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                               color: Theme.of(context).colorScheme.primary)))),
@@ -67,7 +67,7 @@ class SignUpScreenFirst extends StatelessWidget {
               TextField(
                   keyboardType: TextInputType.streetAddress,
                   decoration: textInputDecoration.copyWith(
-                      hintText: 'Address',
+                      hintText: 'Address'.tr,
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                               color: Theme.of(context).colorScheme.primary)))),
@@ -79,6 +79,7 @@ class SignUpScreenFirst extends StatelessWidget {
                 label: "Language",
                 hint: "select language",
                 selectedItem: "${userController.language}",
+                // selectedItem: "English",
                 onChanged: (String? data) {
                   if (data == 'English') {
                     messageController.changeLanguage('en_US', 'id');
@@ -86,24 +87,21 @@ class SignUpScreenFirst extends StatelessWidget {
                     messageController.changeLanguage('id', 'en_US');
                   }
                 },
-                //   dropdownSearchDecoration: const InputDecoration(
-                //     border: InputBorder.none
-                // ),
               ),
               const SizedBox(
                 height: 10,
               ),
               Row(
-                children: const [
-                  GenderRadioButton(value: 'Male', title: 'Male'),
-                  GenderRadioButton(value: 'Female', title: 'Female'),
+                children: [
+                  GenderRadioButton(value: 'Male', title: 'Male'.tr),
+                  GenderRadioButton(value: 'Female', title: 'Female'.tr),
                 ],
               ),
               const SizedBox(
                 height: 70,
               ),
               MainButton(
-                  title: 'Next',
+                  title: 'Next'.tr,
                   onPressed: () {
                     Get.toNamed('/sign_up_screen_second');
                   }),
@@ -113,13 +111,13 @@ class SignUpScreenFirst extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Don\'t have an account? ',
-                    style: TextStyle(fontSize: 17),
+                  Text(
+                    'Already have an account? '.tr,
+                    style: const TextStyle(fontSize: 17),
                   ),
                   GestureDetector(
                     onTap: () => Get.toNamed('/login_screen'),
-                    child: Text('Login',
+                    child: Text('Login'.tr,
                         style: TextStyle(
                             fontSize: 17,
                             color: Theme.of(context).colorScheme.primary)),

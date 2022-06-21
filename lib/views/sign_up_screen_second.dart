@@ -33,7 +33,7 @@ class SignUpScreenSecond extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              Text("Sign Up",
+              Text("Sign Up".tr,
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontSize: 40,
@@ -41,9 +41,9 @@ class SignUpScreenSecond extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              const Text(
-                "Please fill information to create an\naccount and sign up to continue",
-                style: TextStyle(fontSize: 20),
+              Text(
+                "Please fill information to create an\naccount and sign up to continue".tr,
+                style: const TextStyle(fontSize: 20),
               ),
               const SizedBox(
                 height: 45,
@@ -82,7 +82,7 @@ class SignUpScreenSecond extends StatelessWidget {
                   obscureText: c.isHidden.value ? true : false,
                   decoration: textInputDecoration.copyWith(
                     suffixIconColor: Theme.of(context).colorScheme.primary,
-                    hintText: 'Password',
+                    hintText: 'Confirm Password'.tr,
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                             color: Theme.of(context).colorScheme.primary)),
@@ -99,7 +99,7 @@ class SignUpScreenSecond extends StatelessWidget {
                 height: 70,
               ),
               MainButton(
-                  title: 'Sign Up',
+                  title: 'Sign Up'.tr,
                   onPressed: () {
                     Get.toNamed('/upload_profile_photo_screen');
                   }),
@@ -109,13 +109,13 @@ class SignUpScreenSecond extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Already have an account? ',
-                    style: TextStyle(fontSize: 17),
+                  Text(
+                    'Already have an account? '.tr,
+                    style: const TextStyle(fontSize: 17),
                   ),
                   GestureDetector(
                     onTap: () => Get.toNamed('/login_screen'),
-                    child: Text('Login',
+                    child: Text('Login'.tr,
                         style: TextStyle(
                             fontSize: 17,
                             color: Theme.of(context).colorScheme.primary)),

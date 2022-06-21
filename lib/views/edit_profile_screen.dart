@@ -91,9 +91,9 @@ class EditProfileScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Username',
-                      style: TextStyle(
+                    Text(
+                      'Username'.tr,
+                      style: const TextStyle(
                           color: Color(0xFFD3D3D3),
                           fontWeight: FontWeight.w500,
                           fontSize: 20.0),
@@ -139,9 +139,9 @@ class EditProfileScreen extends StatelessWidget {
                     SizedBox(
                       height: height * 0.02,
                     ),
-                    const Text(
-                      'Alamat',
-                      style: TextStyle(
+                    Text(
+                      'Address'.tr,
+                      style: const TextStyle(
                           color: Color(0xFFD3D3D3),
                           fontWeight: FontWeight.w500,
                           fontSize: 20.0),
@@ -163,9 +163,9 @@ class EditProfileScreen extends StatelessWidget {
                     SizedBox(
                       height: height * 0.02,
                     ),
-                    const Text(
-                      'Bahasa',
-                      style: TextStyle(
+                    Text(
+                      'Language'.tr,
+                      style: const TextStyle(
                           color: Color(0xFFD3D3D3),
                           fontWeight: FontWeight.w500,
                           fontSize: 20.0),
@@ -177,7 +177,7 @@ class EditProfileScreen extends StatelessWidget {
                       mode: Mode.MENU,
                       showSelectedItem: true,
                       items: languages,
-                      hint: "select language",
+                      hint: "select language".tr,
                       selectedItem: "${userController.language}",
                       onChanged: (String? data) {
                         if (data == 'English') {
@@ -197,9 +197,9 @@ class EditProfileScreen extends StatelessWidget {
                     SizedBox(
                       height: height * 0.02,
                     ),
-                    const Text(
-                      'Jenis Kelamin',
-                      style: TextStyle(
+                    Text(
+                      'Gender'.tr,
+                      style: const TextStyle(
                           color: Color(0xFFD3D3D3),
                           fontWeight: FontWeight.w500,
                           fontSize: 20.0),
@@ -225,7 +225,7 @@ class EditProfileScreen extends StatelessWidget {
                     SizedBox(
                       height: height * 0.05,
                     ),
-                    MainButton(title: 'Simpan', onPressed: () {})
+                    MainButton(title: 'Save'.tr, onPressed: () {})
                   ],
                 ))
           ],
@@ -234,18 +234,3 @@ class EditProfileScreen extends StatelessWidget {
     );
   }
 }
-
-// DropdownSearch<String>(
-// mode: Mode.MENU,
-// showSelectedItem: true,
-// items: languages,
-// label: "Language",
-// hint: "select language",
-// selectedItem: "English",
-// onChanged: (String? data) {
-// if (data == 'English') {
-// messageController.changeLanguage('en_US', 'id');
-// } else if (data == "Indonesia") {
-// messageController.changeLanguage('id', 'en_US');
-// }
-// }),
