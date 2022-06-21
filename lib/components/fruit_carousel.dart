@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nutria/views/fruit_detail_screen.dart';
+import 'package:nutria/views/detail_screen.dart';
 import '../models/fruit_vegetable_model.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +13,7 @@ class FruitCarousel extends StatelessWidget {
     return SizedBox(
         height: 600,
         child: ListView.builder(
-          reverse: false,
+            reverse: false,
             scrollDirection: Axis.vertical,
             itemCount: fruits.length,
             itemBuilder: (BuildContext context, int index) {
@@ -21,57 +21,65 @@ class FruitCarousel extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
                 child: GestureDetector(
-                  onTap: () => Get.to(() => FruitDetailScreen(detailFruitVegetable: fruit)),
-                  child: Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Image(
-                          height: height * 0.16,
-                          width: width * 0.43,
-                          image: AssetImage(fruit.imageUrl),
-                          fit: BoxFit.cover,
-                        ),
-                        Container(
-                          color: Colors.white,
-                          height: height * 0.16,
-                          width: width * 0.45,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                fruit.title,
-                                style: const TextStyle(
-                                    fontSize: 15.0, fontWeight: FontWeight.w500),
-                              ),
-                              const SizedBox(
-                                height: 7.0,
-                              ),
-                              const Text(
-                                'Kategori',
-                                style: TextStyle(
-                                    color: Color(0xffA1A8B9), fontSize: 13.0),
-                              ),
-                              Text(
-                                fruit.category,
-                                style: const TextStyle(fontSize: 12.0),
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              const Text('Deskripsi',
-                                  style: TextStyle(
-                                      color: Color(0xffA1A8B9), fontSize: 13.0)),
-                              Flexible(
-                                child: Text(fruit.description,
-                                    textAlign: TextAlign.justify,
-                                    style: const TextStyle(fontSize: 12.0, overflow: TextOverflow.clip)),
-                              )
-                            ],
+                  onTap: () =>
+                      Get.to(() => DetailScreen(detailFruitVegetable: fruit)),
+                  child: Hero(
+                    tag: fruit.imageUrl,
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Image(
+                            height: height * 0.16,
+                            width: width * 0.43,
+                            image: AssetImage(fruit.imageUrl),
+                            fit: BoxFit.cover,
                           ),
-                        )
-                      ],
+                          Container(
+                            color: Colors.white,
+                            height: height * 0.16,
+                            width: width * 0.45,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  fruit.title,
+                                  style: const TextStyle(
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                const SizedBox(
+                                  height: 7.0,
+                                ),
+                                const Text(
+                                  'Kategori',
+                                  style: TextStyle(
+                                      color: Color(0xffA1A8B9), fontSize: 13.0),
+                                ),
+                                Text(
+                                  fruit.category,
+                                  style: const TextStyle(fontSize: 12.0),
+                                ),
+                                const SizedBox(
+                                  height: 5.0,
+                                ),
+                                const Text('Deskripsi',
+                                    style: TextStyle(
+                                        color: Color(0xffA1A8B9),
+                                        fontSize: 13.0)),
+                                Flexible(
+                                  child: Text(fruit.description,
+                                      textAlign: TextAlign.justify,
+                                      style: const TextStyle(
+                                          fontSize: 12.0,
+                                          overflow: TextOverflow.clip)),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -4,11 +4,13 @@ import 'package:get/get.dart';
 import 'package:nutria/controllers/gender_controller.dart';
 import 'package:nutria/controllers/translations_controller.dart';
 import 'package:nutria/components/gender_radio_button.dart';
+import 'package:nutria/controllers/user_controller.dart';
 import '../components/main_button.dart';
 import '../components/text_input_decoration.dart';
 
 class SignUpScreenFirst extends StatelessWidget {
   SignUpScreenFirst({Key? key}) : super(key: key);
+  final UserController userController = Get.put(UserController());
   final languages = ['English', 'Indonesia'];
   final messageController = Get.put(MessagesController());
 
@@ -71,19 +73,23 @@ class SignUpScreenFirst extends StatelessWidget {
                               color: Theme.of(context).colorScheme.primary)))),
               const SizedBox(height: 20),
               DropdownSearch<String>(
-                  mode: Mode.MENU,
-                  showSelectedItem: true,
-                  items: languages,
-                  label: "Language",
-                  hint: "select language",
-                  selectedItem: "English",
-                  onChanged: (String? data) {
-                    if (data == 'English') {
-                      messageController.changeLanguage('en_US', 'id');
-                    } else if (data == "Indonesia") {
-                      messageController.changeLanguage('id', 'en_US');
-                    }
-                  }),
+                mode: Mode.MENU,
+                showSelectedItem: true,
+                items: languages,
+                label: "Language",
+                hint: "select language",
+                selectedItem: "${userController.language}",
+                onChanged: (String? data) {
+                  if (data == 'English') {
+                    messageController.changeLanguage('en_US', 'id');
+                  } else if (data == "Indonesia") {
+                    messageController.changeLanguage('id', 'en_US');
+                  }
+                },
+                //   dropdownSearchDecoration: const InputDecoration(
+                //     border: InputBorder.none
+                // ),
+              ),
               const SizedBox(
                 height: 10,
               ),

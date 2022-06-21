@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nutria/views/fruit_list_screen.dart';
 import '../components/vegetable_carousel.dart';
 
 class VegetableListScreen extends StatelessWidget {
@@ -19,21 +20,22 @@ class VegetableListScreen extends StatelessWidget {
                   height: height * 0.23,
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    padding: const EdgeInsets.only(
+                        left: 16.0, right: 16.0, top: 8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
-                            SafeArea(
-                              child: Center(
-                                child: Text(
-                                  'Nutria',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 30.0,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ),
+                        SafeArea(
+                          child: Center(
+                            child: Text(
+                              'Nutria',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.0,
+                                  fontWeight: FontWeight.w700),
                             ),
+                          ),
+                        ),
                         // IconButton(
                         //   icon: const Icon(Icons.arrow_back_ios),
                         //   color: Colors.white,
@@ -66,7 +68,8 @@ class VegetableListScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           GestureDetector(
-                            onTap: () => Get.toNamed('/fruit_list_screen'),
+                            onTap: () => Get.to(const FruitListScreen(),
+                                transition: Transition.rightToLeft),
                             child: Container(
                               height: 50,
                               width: 140,

@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:nutria/views/camera_screen.dart';
 import 'package:nutria/views/edit_profile_screen.dart';
-import 'package:nutria/views/fruit_detail_screen.dart';
 import 'package:nutria/views/fruit_list_screen.dart';
 import 'package:nutria/views/login_screen.dart';
 import 'package:nutria/views/profile_screen.dart';
@@ -12,7 +11,6 @@ import 'package:nutria/views/sign_up_screen_second.dart';
 import 'package:nutria/views/splash_screen_first.dart';
 import 'package:nutria/views/splash_screen_second.dart';
 import 'package:nutria/views/upload_profile_photo_screen.dart';
-import 'package:nutria/views/vegetable_detail_screen.dart';
 import 'package:nutria/views/vegetable_list_screen.dart';
 import 'package:nutria/views/home_screen.dart';
 import 'controllers/screen_controller.dart';
@@ -55,16 +53,14 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: '/upload_profile_photo_screen',
             page: () => const UploadProfilePhotoScreen()),
-        GetPage(name: '/fruit_list_screen', page: () => FruitListScreen()),
+        GetPage(
+            name: '/fruit_list_screen', page: () => const FruitListScreen()),
         GetPage(
             name: '/vegetable_list_screen',
             page: () => const VegetableListScreen()),
         // GetPage(
-        //     name: '/fruit_detail_screen',
-        //     page: () => const FruitDetailScreen(detailFruitVegetable: ,)),
-        GetPage(
-            name: '/vegetable_detail_screen',
-            page: () => const VegetableDetailScreen()),
+        //     name: '/detail_screen',
+        //     page: () => const DetailScreen(detailFruitVegetable: ,)),
         GetPage(name: '/profile_screen', page: () => ProfileScreen()),
         GetPage(name: '/edit_profile_screen', page: () => EditProfileScreen()),
         GetPage(name: '/camera_screen', page: () => const CameraScreen()),

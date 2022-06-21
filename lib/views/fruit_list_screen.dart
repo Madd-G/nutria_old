@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nutria/components/fruit_carousel.dart';
 import 'package:get/get.dart';
+import 'package:nutria/views/vegetable_list_screen.dart';
 
 class FruitListScreen extends StatelessWidget {
   const FruitListScreen({Key? key}) : super(key: key);
@@ -91,7 +92,8 @@ class FruitListScreen extends StatelessWidget {
                             )),
                           ),
                           GestureDetector(
-                            onTap: () => Get.toNamed('/vegetable_list_screen'),
+                            onTap: () => Get.to(const VegetableListScreen(),
+                                transition: Transition.leftToRight),
                             child: Container(
                               height: 50,
                               width: 140,

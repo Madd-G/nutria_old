@@ -7,6 +7,6 @@ class UserController extends GetxController {
   RxString imagePath = 'assets/images/profile.png'.obs;
   RxString email = 'alamsyah@gmail.com'.obs;
   RxString address = 'kebumen'.obs;
-  RxString language = 'Indonesia'.obs;
+  RxString language = 'English'.obs;
   RxString gender = 'Male'.obs;
 }

@@ -1,15 +1,30 @@
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../components/main_button.dart';
+import '../controllers/translations_controller.dart';
 import '../controllers/user_controller.dart';
 
 class EditProfileScreen extends StatelessWidget {
   EditProfileScreen({Key? key}) : super(key: key);
   final UserController userController = Get.put(UserController());
+  final languages = ['English', 'Indonesia'];
+  final messageController = Get.put(MessagesController());
 
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
+    final TextEditingController _username_controller =
+        TextEditingController(text: userController.username.value);
+    final TextEditingController _email_controller =
+        TextEditingController(text: userController.email.value);
+    final TextEditingController _address_controller =
+        TextEditingController(text: userController.address.value);
+    final TextEditingController _language_controller =
+        TextEditingController(text: userController.language.value);
+    final TextEditingController _gender_controller =
+        TextEditingController(text: userController.gender.value);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -87,6 +102,7 @@ class EditProfileScreen extends StatelessWidget {
                       height: height * 0.005,
                     ),
                     TextField(
+                      controller: _username_controller,
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                           hintText: userController.username.value),
@@ -110,6 +126,7 @@ class EditProfileScreen extends StatelessWidget {
                       height: height * 0.005,
                     ),
                     TextField(
+                      controller: _email_controller,
                       keyboardType: TextInputType.text,
                       decoration:
                           InputDecoration(hintText: userController.email.value),
@@ -123,7 +140,7 @@ class EditProfileScreen extends StatelessWidget {
                       height: height * 0.02,
                     ),
                     const Text(
-                      'Address',
+                      'Alamat',
                       style: TextStyle(
                           color: Color(0xFFD3D3D3),
                           fontWeight: FontWeight.w500,
@@ -133,6 +150,7 @@ class EditProfileScreen extends StatelessWidget {
                       height: height * 0.005,
                     ),
                     TextField(
+                      controller: _address_controller,
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                           hintText: userController.address.value),
@@ -146,7 +164,7 @@ class EditProfileScreen extends StatelessWidget {
                       height: height * 0.02,
                     ),
                     const Text(
-                      'Language',
+                      'Bahasa',
                       style: TextStyle(
                           color: Color(0xFFD3D3D3),
                           fontWeight: FontWeight.w500,
@@ -155,10 +173,21 @@ class EditProfileScreen extends StatelessWidget {
                     SizedBox(
                       height: height * 0.005,
                     ),
-                    TextField(
-                      keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
-                          hintText: userController.language.value),
+                    DropdownSearch<String>(
+                      mode: Mode.MENU,
+                      showSelectedItem: true,
+                      items: languages,
+                      hint: "select language",
+                      selectedItem: "${userController.language}",
+                      onChanged: (String? data) {
+                        if (data == 'English') {
+                          messageController.changeLanguage('en_US', 'id');
+                        } else if (data == "Indonesia") {
+                          messageController.changeLanguage('id', 'en_US');
+                        }
+                      },
+                      dropdownSearchDecoration:
+                          const InputDecoration(border: InputBorder.none),
                     ),
                     Container(
                       height: 2.0,
@@ -169,7 +198,7 @@ class EditProfileScreen extends StatelessWidget {
                       height: height * 0.02,
                     ),
                     const Text(
-                      'Gender',
+                      'Jenis Kelamin',
                       style: TextStyle(
                           color: Color(0xFFD3D3D3),
                           fontWeight: FontWeight.w500,
@@ -179,8 +208,10 @@ class EditProfileScreen extends StatelessWidget {
                       height: height * 0.005,
                     ),
                     TextField(
+                      controller: _gender_controller,
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
+                          // label: Text('${userController.gender.value}'),
                           hintText: userController.gender.value),
                     ),
                     Container(
@@ -194,7 +225,7 @@ class EditProfileScreen extends StatelessWidget {
                     SizedBox(
                       height: height * 0.05,
                     ),
-                    MainButton(title: 'Save', onPressed: () {})
+                    MainButton(title: 'Simpan', onPressed: () {})
                   ],
                 ))
           ],

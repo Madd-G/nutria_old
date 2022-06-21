@@ -45,12 +45,14 @@ class ProfileScreen extends StatelessWidget {
                             right: 7,
                             child: Container(
                               decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xff3F897F)
-                              ),
+                                  shape: BoxShape.circle,
+                                  color: Color(0xff3F897F)),
                               height: 30,
                               width: 30,
-                              child: const Icon(Icons.add, color: Colors.white,),
+                              child: const Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
                             ))
                       ]),
                     ),
@@ -124,7 +126,7 @@ class ProfileScreen extends StatelessWidget {
                     height: height * 0.02,
                   ),
                   const Text(
-                    'Address',
+                    'Alamat',
                     style: TextStyle(
                         color: Color(0xFFD3D3D3),
                         fontWeight: FontWeight.w500,
@@ -150,7 +152,7 @@ class ProfileScreen extends StatelessWidget {
                     height: height * 0.02,
                   ),
                   const Text(
-                    'Language',
+                    'Bahasa',
                     style: TextStyle(
                         color: Color(0xFFD3D3D3),
                         fontWeight: FontWeight.w500,
@@ -176,7 +178,7 @@ class ProfileScreen extends StatelessWidget {
                     height: height * 0.02,
                   ),
                   const Text(
-                    'Gender',
+                    'Jenis Kelamin',
                     style: TextStyle(
                         color: Color(0xFFD3D3D3),
                         fontWeight: FontWeight.w500,
@@ -204,9 +206,11 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     height: height * 0.05,
                   ),
-                  MainButton(title: 'Edit Profile', onPressed: () {
-                    Get.toNamed('/edit_profile_screen');
-                  })
+                  MainButton(
+                      title: 'Edit Profil',
+                      onPressed: () {
+                        Get.toNamed('/edit_profile_screen');
+                      })
                 ],
               ))
         ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nutria/views/fruit_detail_screen.dart';
+import 'package:nutria/views/detail_screen.dart';
 import '../models/fruit_vegetable_model.dart';
 
 class RecommendationCarousel extends StatelessWidget {
@@ -49,7 +49,7 @@ class RecommendationCarousel extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: GestureDetector(
-                              onTap: () => Get.to(() => FruitDetailScreen(
+                              onTap: () => Get.to(() => DetailScreen(
                                   detailFruitVegetable: recommendation)),
                               child: Image(
                                 height: 180.0,
