@@ -13,6 +13,7 @@ class FruitCarousel extends StatelessWidget {
     return SizedBox(
         height: 600,
         child: ListView.builder(
+            shrinkWrap: false,
             reverse: false,
             scrollDirection: Axis.vertical,
             itemCount: fruits.length,
@@ -26,7 +27,7 @@ class FruitCarousel extends StatelessWidget {
                   child: Hero(
                     tag: fruit.imageUrl,
                     child: Container(
-                      decoration:  BoxDecoration(
+                      decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(2.0),
                           color: const Color(0xffF7F9FB),
                           boxShadow: const [
@@ -43,7 +44,7 @@ class FruitCarousel extends StatelessWidget {
                             Container(
                               height: height * 0.172,
                               width: width * 0.442,
-                              decoration:  BoxDecoration(
+                              decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(2.0),
                                   color: Colors.white,
                                   boxShadow: const [
@@ -80,10 +81,11 @@ class FruitCarousel extends StatelessWidget {
                                     const SizedBox(
                                       height: 7.0,
                                     ),
-                                    const Text(
-                                      'Kategori',
-                                      style: TextStyle(
-                                          color: Color(0xffA1A8B9), fontSize: 13.0),
+                                    Text(
+                                      'Category'.tr,
+                                      style: const TextStyle(
+                                          color: Color(0xffA1A8B9),
+                                          fontSize: 13.0),
                                     ),
                                     Text(
                                       fruit.category,
@@ -92,8 +94,8 @@ class FruitCarousel extends StatelessWidget {
                                     const SizedBox(
                                       height: 5.0,
                                     ),
-                                    const Text('Deskripsi',
-                                        style: TextStyle(
+                                    Text('Description'.tr,
+                                        style: const TextStyle(
                                             color: Color(0xffA1A8B9),
                                             fontSize: 13.0)),
                                     Expanded(
@@ -101,8 +103,9 @@ class FruitCarousel extends StatelessWidget {
                                           textAlign: TextAlign.justify,
                                           maxLines: 10,
                                           style: const TextStyle(
-                                              fontSize: 12.0,
-                                              overflow: TextOverflow.fade, )),
+                                            fontSize: 12.0,
+                                            overflow: TextOverflow.fade,
+                                          )),
                                     )
                                   ],
                                 ),

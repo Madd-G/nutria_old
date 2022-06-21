@@ -22,12 +22,12 @@ class VegetableCarousel extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(left: 4.0, right: 4.0, top: 4.0),
                 child: GestureDetector(
-                  onTap: () =>
-                      Get.to(() => DetailScreen(detailFruitVegetable: vegetable)),
+                  onTap: () => Get.to(
+                      () => DetailScreen(detailFruitVegetable: vegetable)),
                   child: Hero(
                     tag: vegetable.imageUrl,
                     child: Container(
-                      decoration:  BoxDecoration(
+                      decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(2.0),
                           color: const Color(0xffF7F9FB),
                           boxShadow: const [
@@ -44,7 +44,7 @@ class VegetableCarousel extends StatelessWidget {
                             Container(
                               height: height * 0.172,
                               width: width * 0.442,
-                              decoration:  BoxDecoration(
+                              decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(2.0),
                                   color: Colors.white,
                                   boxShadow: const [
@@ -81,10 +81,11 @@ class VegetableCarousel extends StatelessWidget {
                                     const SizedBox(
                                       height: 7.0,
                                     ),
-                                    const Text(
-                                      'Kategori',
-                                      style: TextStyle(
-                                          color: Color(0xffA1A8B9), fontSize: 13.0),
+                                    Text(
+                                      'Category'.tr,
+                                      style: const TextStyle(
+                                          color: Color(0xffA1A8B9),
+                                          fontSize: 13.0),
                                     ),
                                     Text(
                                       vegetable.category,
@@ -93,8 +94,8 @@ class VegetableCarousel extends StatelessWidget {
                                     const SizedBox(
                                       height: 5.0,
                                     ),
-                                    const Text('Deskripsi',
-                                        style: TextStyle(
+                                    Text('Description'.tr,
+                                        style: const TextStyle(
                                             color: Color(0xffA1A8B9),
                                             fontSize: 13.0)),
                                     Expanded(
@@ -103,7 +104,8 @@ class VegetableCarousel extends StatelessWidget {
                                           maxLines: 10,
                                           style: const TextStyle(
                                             fontSize: 12.0,
-                                            overflow: TextOverflow.fade, )),
+                                            overflow: TextOverflow.fade,
+                                          )),
                                     )
                                   ],
                                 ),

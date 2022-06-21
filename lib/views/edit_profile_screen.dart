@@ -20,8 +20,6 @@ class EditProfileScreen extends StatelessWidget {
         TextEditingController(text: userController.email.value);
     final TextEditingController _address_controller =
         TextEditingController(text: userController.address.value);
-    final TextEditingController _language_controller =
-        TextEditingController(text: userController.language.value);
     final TextEditingController _gender_controller =
         TextEditingController(text: userController.gender.value);
 

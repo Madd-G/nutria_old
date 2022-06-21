@@ -27,8 +27,8 @@ class SplashScreenSecond extends StatelessWidget {
                   height: 40,
                 ),
                 Text(
-                    'Find Out The Nutritions and Benefits of\nFruits and Vegetables'.tr,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    'Find Out The Nutrition and Benefits of\nFruits and Vegetables'.tr,
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center),
                 const SizedBox(
                   height: 30,

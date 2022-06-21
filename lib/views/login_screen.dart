@@ -30,7 +30,8 @@ class LoginScreen extends StatelessWidget {
                 height: 50,
               ),
               Text(
-                "Enter your email address and\npassword to access your account".tr,
+                "Enter your email address and\npassword to access your account"
+                    .tr,
                 style: const TextStyle(fontSize: 20),
               ),
               const SizedBox(
@@ -88,7 +89,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Don\'t have an account? '.tr,
-                    style: TextStyle(fontSize: 17),
+                    style: const TextStyle(fontSize: 17),
                   ),
                   GestureDetector(
                     onTap: () => Get.toNamed('/sign_up_screen_first'),

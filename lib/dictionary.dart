@@ -5,7 +5,7 @@ class Dictionary extends Translations {
   Map<String, Map<String, String>> get keys => {
         'en_US': {
           'Identify Fruits and Vegetables Through\nCamera and Pictures' : 'Identify Fruits and Vegetables Through\nCamera and Pictures',
-          'Find Out The Nutritions and Benefits of\nFruits and Vegetables' : 'Find Out The Nutritions and Benefits of\nFruits and Vegetables',
+          'Find Out The Nutrition and Benefits of\nFruits and Vegetables' : 'Find Out The Nutrition and Benefits of\nFruits and Vegetables',
           'Login': 'Login',
           'Enter your email address and\npassword to access your account':
               'Enter your email address and\npassword to access your account',
@@ -29,8 +29,8 @@ class Dictionary extends Translations {
           'Hello ': 'Hello @username',
           'Let\'s Learn More About Fruits and Vegetables':
               'Let\'s Learn More About Fruits and Vegetables',
-          'SCAN TO KNOW THE TYPE\nOF FRUIT OR VEGETABLE':
-              'SCAN TO KNOW THE TYPE\nOF FRUIT OR VEGETABLE',
+          'SCAN TO FIND OUT ABOUT\nA FRUIT OR VEGETABLE':
+              'SCAN TO FIND OUT ABOUT\nA FRUIT OR VEGETABLE',
           'Category': 'Category',
           'Find fruits or vegetables': 'Find fruits or vegetables',
           'Recommendation': 'Recommendation',
@@ -51,7 +51,7 @@ class Dictionary extends Translations {
         },
         'id': {
           'Identify Fruits and Vegetables Through\nCamera and Pictures' : 'Identifikasi Buah dan Sayuran\nMelalui Kamera dan Gambar',
-          'Find Out The Nutritions and Benefits of\nFruits and Vegetables' :'Cari Tahu Nutrisi dan Manfaat\nBuah dan Sayur',
+          'Find Out The Nutrition and Benefits of\nFruits and Vegetables' :'Cari Tahu Nutrisi dan Manfaat\nBuah dan Sayur',
           'Login': 'Masuk',
           'Enter your email address and\npassword to access your account':
               'Masukkan alamat email dan password\nterdaftar untuk masuk ke akunmu',
@@ -75,8 +75,8 @@ class Dictionary extends Translations {
           'Hello ': 'Halo @username',
           'Let\'s Learn More About Fruits and Vegetables':
               'Ayo cari tahu tentang buah dan sayuran',
-          'SCAN TO KNOW THE TYPE\nOF FRUIT OR VEGETABLE':
-              'SCAN UNTUK MENGETAHUI\nJENIS BUAH ATAU SAYURAN',
+          'SCAN TO FIND OUT ABOUT\nA FRUIT OR VEGETABLE':
+              'SCAN UNTUK MENCARI TAHU\nTENTANG BUAH ATAU SAYURAN',
           'Category': 'Kategori',
           'Find fruits or vegetables': 'Cari buah atau sayuran',
           'Recommendation': 'Rekomendasi',

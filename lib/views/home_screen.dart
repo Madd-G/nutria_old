@@ -41,7 +41,8 @@ class HomeScreen extends StatelessWidget {
                           height: height * 0.025,
                         ),
                         Text(
-                          'Hello '.trParams({'username' : '${userController.username.value}'}),
+                          'Hello '.trParams(
+                              {'username': userController.username.value}),
                           style: const TextStyle(
                               color: Colors.white,
                               fontSize: 27,
@@ -84,7 +85,8 @@ class HomeScreen extends StatelessWidget {
                                   width: 18.0,
                                 ),
                                 Text(
-                                  'SCAN TO KNOW THE TYPE\nOF FRUIT OR VEGETABLE'.tr,
+                                  'SCAN TO FIND OUT ABOUT\nA FRUIT OR VEGETABLE'
+                                      .tr,
                                   style: const TextStyle(
                                       fontSize: 18.0,
                                       fontWeight: FontWeight.w700,
@@ -113,13 +115,15 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           CategoryBox(
-                              imagePath: 'assets/images/buah.png',
-                              route: '/fruit_list_screen', label: 'Fruit'.tr,),
+                            imagePath: 'assets/images/fruit.png',
+                            route: '/fruit_list_screen',
+                            label: 'Fruit'.tr,
+                          ),
                           const SizedBox(
                             width: 10.0,
                           ),
                           CategoryBox(
-                            imagePath: 'assets/images/sayuran.png',
+                            imagePath: 'assets/images/vegetable.png',
                             route: '/vegetable_list_screen',
                             label: 'Vegetable'.tr,
                           )

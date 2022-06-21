@@ -19,7 +19,7 @@ class _DetailScreenState extends State<DetailScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               // color: Theme.of(context).colorScheme.primary,
               height: height * 0.38,
               width: double.infinity, // width: double.infinity,
@@ -34,47 +34,45 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.detailFruitVegetable.title,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.detailFruitVegetable.title,
+                    style: const TextStyle(
+                        fontSize: 35.0, fontWeight: FontWeight.w700),
+                  ),
+                  SizedBox(
+                    height: height * 0.025,
+                  ),
+                  Text(
+                    'Category'.tr,
+                    style: const TextStyle(
+                        fontSize: 20.0, fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(
+                    height: height * 0.01,
+                  ),
+                  Text(
+                    widget.detailFruitVegetable.category,
+                    style: const TextStyle(fontSize: 16.0),
+                  ),
+                  SizedBox(
+                    height: height * 0.025,
+                  ),
+                  Text('Description'.tr,
                       style: const TextStyle(
-                          fontSize: 35.0, fontWeight: FontWeight.w700),
-                    ),
-                    SizedBox(
-                      height: height * 0.025,
-                    ),
-                    Text(
-                      'Category'.tr,
+                          fontSize: 20.0, fontWeight: FontWeight.w600)),
+                  SizedBox(
+                    height: height * 0.01,
+                  ),
+                  Text(widget.detailFruitVegetable.description,
+                      textAlign: TextAlign.justify,
                       style: const TextStyle(
-                          fontSize: 20.0, fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(
-                      height: height * 0.01,
-                    ),
-                    Text(
-                      widget.detailFruitVegetable.category,
-                      style: const TextStyle(fontSize: 16.0),
-                    ),
-                    SizedBox(
-                      height: height * 0.025,
-                    ),
-                    Text('Description'.tr,
-                        style: const TextStyle(
-                            fontSize: 20.0, fontWeight: FontWeight.w600)),
-                    SizedBox(
-                      height: height * 0.01,
-                    ),
-                    Text(widget.detailFruitVegetable.description,
-                        textAlign: TextAlign.justify,
-                        style: const TextStyle(
-                          fontSize: 16.0,
-                          overflow: TextOverflow.clip,
-                        )),
-                  ],
-                ),
+                        fontSize: 16.0,
+                        overflow: TextOverflow.clip,
+                      )),
+                ],
               ),
             )
           ],

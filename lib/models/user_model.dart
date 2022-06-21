@@ -21,7 +21,7 @@ final List<User> userData = [
       username: 'Alamsyah',
       imagePath: 'assets/images/profile.png',
       email: 'alamsyah@gmail.com',
-      address: 'kebumen',
+      address: 'Kebumen',
       language: 'Indonesia',
       gender: 'Male')
 ];

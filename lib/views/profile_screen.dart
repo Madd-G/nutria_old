@@ -125,9 +125,9 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     height: height * 0.02,
                   ),
-                  const Text(
-                    'Alamat',
-                    style: TextStyle(
+                  Text(
+                    'Address'.tr,
+                    style: const TextStyle(
                         color: Color(0xFFD3D3D3),
                         fontWeight: FontWeight.w500,
                         fontSize: 20.0),
@@ -151,9 +151,9 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     height: height * 0.02,
                   ),
-                  const Text(
-                    'Bahasa',
-                    style: TextStyle(
+                  Text(
+                    'Language'.tr,
+                    style: const TextStyle(
                         color: Color(0xFFD3D3D3),
                         fontWeight: FontWeight.w500,
                         fontSize: 20.0),
@@ -177,9 +177,9 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     height: height * 0.02,
                   ),
-                  const Text(
-                    'Jenis Kelamin',
-                    style: TextStyle(
+                  Text(
+                    'Gender'.tr,
+                    style: const TextStyle(
                         color: Color(0xFFD3D3D3),
                         fontWeight: FontWeight.w500,
                         fontSize: 20.0),
@@ -207,7 +207,7 @@ class ProfileScreen extends StatelessWidget {
                     height: height * 0.05,
                   ),
                   MainButton(
-                      title: 'Edit Profil',
+                      title: 'Edit Profile'.tr,
                       onPressed: () {
                         Get.toNamed('/edit_profile_screen');
                       })

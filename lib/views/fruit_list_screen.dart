@@ -17,7 +17,7 @@ class FruitListScreen extends StatelessWidget {
               children: [
                 Container(
                   color: Theme.of(context).colorScheme.primary,
-                  height: height * 0.23,
+                  height: height * 0.33,
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 16.0, right: 16.0),
@@ -34,15 +34,15 @@ class FruitListScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w700),
                           ),
                         )),
-                        // IconButton(
-                        //   icon: const Icon(Icons.arrow_back_ios),
-                        //   color: Colors.white,
-                        //   onPressed: () {
-                        //     Get.toNamed('/screen_controller');
-                        //   },
-                        // ),
+                        IconButton(
+                          icon: const Icon(Icons.arrow_back_ios),
+                          color: Colors.white,
+                          onPressed: () {
+                            Get.toNamed('/screen_controller');
+                          },
+                        ),
                         SizedBox(
-                          height: height * 0.025,
+                          height: height * 0.015,
                         ),
                         Text(
                           "Fruit List".tr,
@@ -131,7 +131,7 @@ class FruitListScreen extends StatelessWidget {
               ],
             ),
             Positioned(
-              top: height * 0.197,
+              top: height * 0.297,
               left: MediaQuery.of(context).size.width / 14,
               right: MediaQuery.of(context).size.width / 14,
               // right: width/2,
