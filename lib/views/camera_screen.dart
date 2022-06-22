@@ -1,5 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:nutria/views/preview_screen.dart';
 
@@ -31,7 +32,9 @@ class _CameraScreenState extends State<CameraScreen> {
     });
 
     if (cameraController!.value.hasError) {
-      print('Camera Error ${cameraController?.value.errorDescription}');
+      if (kDebugMode) {
+        print('Camera Error ${cameraController?.value.errorDescription}');
+      }
     }
 
     try {
@@ -55,10 +58,19 @@ class _CameraScreenState extends State<CameraScreen> {
       );
     }
 
-    return AspectRatio(
-      aspectRatio: cameraController!.value.aspectRatio,
-      child: CameraPreview(cameraController!),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        Expanded(
+          flex: 2,
+          child: CameraPreview(cameraController!),
+        ),
+      ],
     );
+    // return AspectRatio(
+    //   aspectRatio: cameraController!.value.aspectRatio,
+    //   child: CameraPreview(cameraController!),
+    // );
   }
 
   Widget cameraControl(context) {
@@ -86,7 +98,7 @@ class _CameraScreenState extends State<CameraScreen> {
   }
 
   Widget cameraToggle() {
-    if (cameras == null || cameras.isEmpty) {
+    if (cameras.isEmpty) {
       return const Spacer();
     }
 
@@ -106,9 +118,9 @@ class _CameraScreenState extends State<CameraScreen> {
               size: 24,
             ),
             label: Text(
-              '${lensDirection.toString().substring(lensDirection.toString().indexOf('.') + 1).toUpperCase()}',
-              style:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+              lensDirection.toString().substring(lensDirection.toString().indexOf('.') + 1).toUpperCase(),
+              style: const TextStyle(
+                  color: Colors.white, fontWeight: FontWeight.w500),
             )),
       ),
     );
@@ -132,16 +144,20 @@ class _CameraScreenState extends State<CameraScreen> {
     super.initState();
     availableCameras().then((value) {
       cameras = value;
-      if (cameras.length > 0) {
+      if (cameras.isNotEmpty) {
         setState(() {
           selectedCameraIndex = 0;
         });
         initCamera(cameras[selectedCameraIndex]).then((value) {});
       } else {
-        print('No camera available');
+        if (kDebugMode) {
+          print('No camera available');
+        }
       }
     }).catchError((e) {
-      print('Error : ${e.code}');
+      if (kDebugMode) {
+        print('Error : ${e.code}');
+      }
     });
   }
 
@@ -149,52 +165,50 @@ class _CameraScreenState extends State<CameraScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Container(
-        child: Stack(
-          children: <Widget>[
-            Align(
-              alignment: Alignment.center,
-              child: cameraPreview(),
-            ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: const [
-                    Text('Photo KTP', style: TextStyle(fontSize: 24)),
-                    Text('Pastikan KTP ada pada tengah kotak'),
-                  ],
-                ),
+      body: Stack(
+        children: <Widget>[
+          Align(
+            alignment: Alignment.center,
+            child: cameraPreview(),
+          ),
+          // Align(
+          //   alignment: Alignment.topCenter,
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(8.0),
+          //     child: Column(
+          //       children: const [
+          //         Text('Photo KTP', style: TextStyle(fontSize: 24)),
+          //         Text('make sure the ID card is in the middle'),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+          // Align(
+          //   alignment: Alignment.center,
+          //   child: Image.asset(
+          //     'assets/ktp.png',
+          //     scale: 0.8,
+          //   ),
+          // ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 120,
+              width: double.infinity,
+              padding: const EdgeInsets.all(15),
+              margin: const EdgeInsets.only(bottom: 20),
+              color: Colors.transparent,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  cameraToggle(),
+                  cameraControl(context),
+                  const Spacer(),
+                ],
               ),
             ),
-            Align(
-              alignment: Alignment.center,
-              child: Image.asset(
-                'assets/ktp.png',
-                scale: 0.8,
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: 120,
-                width: double.infinity,
-                padding: EdgeInsets.all(15),
-                margin: EdgeInsets.only(bottom: 20),
-                color: Colors.transparent,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    cameraToggle(),
-                    cameraControl(context),
-                    const Spacer(),
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
@@ -214,13 +228,15 @@ class _CameraScreenState extends State<CameraScreen> {
 
   onSwitchCamera() {
     selectedCameraIndex =
-    selectedCameraIndex < cameras.length - 1 ? selectedCameraIndex + 1 : 0;
+        selectedCameraIndex < cameras.length - 1 ? selectedCameraIndex + 1 : 0;
     CameraDescription selectedCamera = cameras[selectedCameraIndex];
     initCamera(selectedCamera);
   }
 
   showCameraException(e) {
     String errorText = 'Error ${e.code} \nError message: ${e.description}';
-    print(errorText);
+    if (kDebugMode) {
+      print(errorText);
+    }
   }
 }
