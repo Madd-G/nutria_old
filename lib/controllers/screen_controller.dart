@@ -10,7 +10,7 @@ class ScreenController extends StatelessWidget {
   final RxInt _currentIndex = 1.obs;
 
   final screens = [
-    const CameraScreen(),
+    CameraScreen(),
     HomeScreen(),
     ProfileScreen(),
   ];

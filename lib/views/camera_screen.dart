@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:nutria/views/preview_screen.dart';
 
 class CameraScreen extends StatefulWidget {
@@ -16,6 +20,7 @@ class _CameraScreenState extends State<CameraScreen> {
   late List cameras;
   late int selectedCameraIndex;
   late String imgPath;
+  File? imageGallery;
 
   Future initCamera(CameraDescription cameraDescription) async {
     if (cameraController != null) {
@@ -73,6 +78,30 @@ class _CameraScreenState extends State<CameraScreen> {
     // );
   }
 
+  Widget galleryButton(context) {
+    return Expanded(
+      child: Align(
+        alignment: Alignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            FloatingActionButton(
+              child: const Icon(
+                Icons.browse_gallery,
+                color: Colors.black,
+              ),
+              backgroundColor: Colors.white,
+              onPressed: () {
+                pickImageGallery(context);
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget cameraControl(context) {
     return Expanded(
       child: Align(
@@ -98,7 +127,7 @@ class _CameraScreenState extends State<CameraScreen> {
   }
 
   Widget cameraToggle() {
-    if (cameras.isEmpty) {
+    if (cameras == null || cameras.isEmpty) {
       return const Spacer();
     }
 
@@ -118,12 +147,35 @@ class _CameraScreenState extends State<CameraScreen> {
               size: 24,
             ),
             label: Text(
-              lensDirection.toString().substring(lensDirection.toString().indexOf('.') + 1).toUpperCase(),
+              lensDirection
+                  .toString()
+                  .substring(lensDirection.toString().indexOf('.') + 1)
+                  .toUpperCase(),
               style: const TextStyle(
                   color: Colors.white, fontWeight: FontWeight.w500),
             )),
       ),
     );
+  }
+
+  Future pickImageGallery(context) async {
+    try {
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (image != null) {
+        return Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => PreviewScreen(imgPath: image)));
+      }
+      if (image == null) return;
+
+      final imageTemporary = File(image.path);
+      imageGallery = imageTemporary;
+    } on PlatformException catch (e) {
+      if (kDebugMode) {
+        print('Failed to pick image,\n$e',);
+      }
+    }
   }
 
   onCapture(context) async {
@@ -144,7 +196,7 @@ class _CameraScreenState extends State<CameraScreen> {
     super.initState();
     availableCameras().then((value) {
       cameras = value;
-      if (cameras.isNotEmpty) {
+      if (cameras.length > 0) {
         setState(() {
           selectedCameraIndex = 0;
         });
@@ -171,25 +223,6 @@ class _CameraScreenState extends State<CameraScreen> {
             alignment: Alignment.center,
             child: cameraPreview(),
           ),
-          // Align(
-          //   alignment: Alignment.topCenter,
-          //   child: Padding(
-          //     padding: const EdgeInsets.all(8.0),
-          //     child: Column(
-          //       children: const [
-          //         Text('Photo KTP', style: TextStyle(fontSize: 24)),
-          //         Text('make sure the ID card is in the middle'),
-          //       ],
-          //     ),
-          //   ),
-          // ),
-          // Align(
-          //   alignment: Alignment.center,
-          //   child: Image.asset(
-          //     'assets/ktp.png',
-          //     scale: 0.8,
-          //   ),
-          // ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -201,9 +234,9 @@ class _CameraScreenState extends State<CameraScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  cameraToggle(),
+                  galleryButton(context),
                   cameraControl(context),
-                  const Spacer(),
+                  cameraToggle(),
                 ],
               ),
             ),

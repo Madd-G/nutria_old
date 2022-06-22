@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class PreviewScreen extends StatefulWidget {
   final XFile imgPath;
-  PreviewScreen({required this.imgPath});
+  const PreviewScreen({required this.imgPath});
 
   @override
   _PreviewScreenState createState() => _PreviewScreenState();

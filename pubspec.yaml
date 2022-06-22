@@ -16,6 +16,8 @@ dependencies:
   get:
   dropdown_search: ^0.6.1
   camera: ^0.9.8+1
+  image_picker: ^0.8.3+1
+  path_provider:
 
 dev_dependencies:
   flutter_test:
