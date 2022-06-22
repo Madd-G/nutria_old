@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get:
   dropdown_search: ^0.6.1
+  camera: ^0.9.8+1
 
 dev_dependencies:
   flutter_test:
