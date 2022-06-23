@@ -26,10 +26,11 @@ class _DetailScreenState extends State<DetailScreen> {
               child: Hero(
                 tag: widget.detailFruitVegetable.imageUrl,
                 child: Image(
-                    fit: BoxFit.cover,
-                    image: AssetImage(
-                      widget.detailFruitVegetable.imageUrl,
-                    )),
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    widget.detailFruitVegetable.imageUrl,
+                  ),
+                ),
               ),
             ),
             Padding(
@@ -60,18 +61,22 @@ class _DetailScreenState extends State<DetailScreen> {
                   SizedBox(
                     height: height * 0.025,
                   ),
-                  Text('Description'.tr,
-                      style: const TextStyle(
-                          fontSize: 20.0, fontWeight: FontWeight.w600)),
+                  Text(
+                    'Description'.tr,
+                    style: const TextStyle(
+                        fontSize: 20.0, fontWeight: FontWeight.w600),
+                  ),
                   SizedBox(
                     height: height * 0.01,
                   ),
-                  Text(widget.detailFruitVegetable.description,
-                      textAlign: TextAlign.justify,
-                      style: const TextStyle(
-                        fontSize: 16.0,
-                        overflow: TextOverflow.clip,
-                      )),
+                  Text(
+                    widget.detailFruitVegetable.description,
+                    textAlign: TextAlign.justify,
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      overflow: TextOverflow.clip,
+                    ),
+                  ),
                 ],
               ),
             )

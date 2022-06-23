@@ -11,23 +11,25 @@ class GenderRadioButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<GenderController>(builder: (controller) {
-      return InkWell(
-        onTap: () => controller.setGenderType(value),
-        child: Row(
-          children: [
-            Radio(
-              value: value,
-              groupValue: controller.selectedGender,
-              onChanged: (newValue) {
-                controller.setGenderType(value);
-              },
-              activeColor: Theme.of(context).primaryColor,
-            ),
-            Text(title),
-          ],
-        ),
-      );
-    });
+    return GetBuilder<GenderController>(
+      builder: (controller) {
+        return InkWell(
+          onTap: () => controller.setGenderType(value),
+          child: Row(
+            children: [
+              Radio(
+                value: value,
+                groupValue: controller.selectedGender,
+                onChanged: (newValue) {
+                  controller.setGenderType(value);
+                },
+                activeColor: Theme.of(context).primaryColor,
+              ),
+              Text(title),
+            ],
+          ),
+        );
+      },
+    );
   }
 }

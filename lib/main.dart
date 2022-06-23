@@ -13,13 +13,15 @@ import 'package:nutria/views/splash_screen_second.dart';
 import 'package:nutria/views/upload_profile_photo_screen.dart';
 import 'package:nutria/views/vegetable_list_screen.dart';
 import 'package:nutria/views/home_screen.dart';
-import 'controllers/screen_controller.dart';
+import 'views/screen_controller.dart';
 import 'dictionary.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -30,41 +32,71 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch()
-              .copyWith(primary: const Color(0xff58D7B7))),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color(0xff58D7B7),
+        ),
+      ),
       translations: Dictionary(),
       locale: const Locale('en_US', 'EN_US'),
       fallbackLocale: const Locale('en_US', 'EN_US'),
       home: const LoginScreen(),
       initialRoute: '/login_screen',
       getPages: [
-        GetPage(name: '/', page: () => HomeScreen()),
         GetPage(
-            name: '/splash_screen_first',
-            page: () => const SplashScreenFirst()),
+          name: '/',
+          page: () => HomeScreen(),
+        ),
         GetPage(
-            name: '/splash_screen_second',
-            page: () => const SplashScreenSecond()),
-        GetPage(name: '/login_screen', page: () => const LoginScreen()),
-        GetPage(name: '/sign_up_screen_first', page: () => SignUpScreenFirst()),
+          name: '/splash_screen_first',
+          page: () => const SplashScreenFirst(),
+        ),
         GetPage(
-            name: '/sign_up_screen_second',
-            page: () => const SignUpScreenSecond()),
+          name: '/splash_screen_second',
+          page: () => const SplashScreenSecond(),
+        ),
         GetPage(
-            name: '/upload_profile_photo_screen',
-            page: () => const UploadProfilePhotoScreen()),
+          name: '/login_screen',
+          page: () => const LoginScreen(),
+        ),
         GetPage(
-            name: '/fruit_list_screen', page: () => const FruitListScreen()),
+          name: '/sign_up_screen_first',
+          page: () => SignUpScreenFirst(),
+        ),
         GetPage(
-            name: '/vegetable_list_screen',
-            page: () => const VegetableListScreen()),
+          name: '/sign_up_screen_second',
+          page: () => const SignUpScreenSecond(),
+        ),
+        GetPage(
+          name: '/upload_profile_photo_screen',
+          page: () => const UploadProfilePhotoScreen(),
+        ),
+        GetPage(
+          name: '/fruit_list_screen',
+          page: () => const FruitListScreen(),
+        ),
+        GetPage(
+          name: '/vegetable_list_screen',
+          page: () => const VegetableListScreen(),
+        ),
         // GetPage(
         //     name: '/detail_screen',
-        //     page: () => const DetailScreen(detailFruitVegetable: ,)),
-        GetPage(name: '/profile_screen', page: () => ProfileScreen()),
-        GetPage(name: '/edit_profile_screen', page: () => EditProfileScreen()),
-        GetPage(name: '/camera_screen', page: () => CameraScreen()),
-        GetPage(name: '/screen_controller', page: () => ScreenController()),
+        //     page: () => const DetailScreen(detailFruitVegetable: ,),),
+        GetPage(
+          name: '/profile_screen',
+          page: () => ProfileScreen(),
+        ),
+        GetPage(
+          name: '/edit_profile_screen',
+          page: () => EditProfileScreen(),
+        ),
+        GetPage(
+          name: '/camera_screen',
+          page: () => const CameraScreen(),
+        ),
+        GetPage(
+          name: '/screen_controller',
+          page: () => ScreenController(),
+        ),
       ],
     );
   }

@@ -5,7 +5,9 @@ import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({Key? key}) : super(key: key);
-  final UserController userController = Get.put(UserController());
+  final UserController userController = Get.put(
+    UserController(),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +27,10 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   SafeArea(
                     child: Center(
-                      child: Stack(children: [
-                        Container(
-                          decoration: BoxDecoration(
+                      child: Stack(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
                                   width: 5,
@@ -35,12 +38,13 @@ class ProfileScreen extends StatelessWidget {
                               image: const DecorationImage(
                                 fit: BoxFit.fill,
                                 image: AssetImage('assets/images/profile.png'),
-                              )),
-                          height: 100,
-                          width: 100,
-                          padding: const EdgeInsets.all(8.0),
-                        ),
-                        Positioned(
+                              ),
+                            ),
+                            height: 100,
+                            width: 100,
+                            padding: const EdgeInsets.all(8.0),
+                          ),
+                          Positioned(
                             bottom: 7,
                             right: 7,
                             child: Container(
@@ -53,8 +57,10 @@ class ProfileScreen extends StatelessWidget {
                                 Icons.add,
                                 color: Colors.white,
                               ),
-                            ))
-                      ]),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Text(
@@ -69,150 +75,152 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Username'.tr,
-                    style: const TextStyle(
-                        color: Color(0xFFD3D3D3),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20.0),
-                  ),
-                  SizedBox(
-                    height: height * 0.005,
-                  ),
-                  Text(
-                    userController.username.value,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 20.0),
-                  ),
-                  SizedBox(
-                    height: height * 0.004,
-                  ),
-                  Container(
-                    height: 2.0,
-                    width: double.infinity,
-                    color: const Color(0xFFD3D3D3),
-                  ),
-                  SizedBox(
-                    height: height * 0.02,
-                  ),
-                  const Text(
-                    'Email',
-                    style: TextStyle(
-                        color: Color(0xFFD3D3D3),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20.0),
-                  ),
-                  SizedBox(
-                    height: height * 0.005,
-                  ),
-                  Text(
-                    userController.email.value,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 20.0),
-                  ),
-                  SizedBox(
-                    height: height * 0.004,
-                  ),
-                  Container(
-                    height: 2.0,
-                    width: double.infinity,
-                    color: const Color(0xFFD3D3D3),
-                  ),
-                  SizedBox(
-                    height: height * 0.02,
-                  ),
-                  Text(
-                    'Address'.tr,
-                    style: const TextStyle(
-                        color: Color(0xFFD3D3D3),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20.0),
-                  ),
-                  SizedBox(
-                    height: height * 0.005,
-                  ),
-                  Text(
-                    userController.address.value,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 20.0),
-                  ),
-                  SizedBox(
-                    height: height * 0.004,
-                  ),
-                  Container(
-                    height: 2.0,
-                    width: double.infinity,
-                    color: const Color(0xFFD3D3D3),
-                  ),
-                  SizedBox(
-                    height: height * 0.02,
-                  ),
-                  Text(
-                    'Language'.tr,
-                    style: const TextStyle(
-                        color: Color(0xFFD3D3D3),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20.0),
-                  ),
-                  SizedBox(
-                    height: height * 0.005,
-                  ),
-                  Text(
-                    userController.language.value,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 20.0),
-                  ),
-                  SizedBox(
-                    height: height * 0.004,
-                  ),
-                  Container(
-                    height: 2.0,
-                    width: double.infinity,
-                    color: const Color(0xFFD3D3D3),
-                  ),
-                  SizedBox(
-                    height: height * 0.02,
-                  ),
-                  Text(
-                    'Gender'.tr,
-                    style: const TextStyle(
-                        color: Color(0xFFD3D3D3),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20.0),
-                  ),
-                  SizedBox(
-                    height: height * 0.005,
-                  ),
-                  Text(
-                    userController.gender.value,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 20.0),
-                  ),
-                  SizedBox(
-                    height: height * 0.004,
-                  ),
-                  Container(
-                    height: 2.0,
-                    width: double.infinity,
-                    color: const Color(0xFFD3D3D3),
-                  ),
-                  SizedBox(
-                    height: height * 0.02,
-                  ),
-                  SizedBox(
-                    height: height * 0.05,
-                  ),
-                  MainButton(
-                      title: 'Edit Profile'.tr,
-                      onPressed: () {
-                        Get.toNamed('/edit_profile_screen');
-                      })
-                ],
-              ))
+            padding: const EdgeInsets.all(30.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Username'.tr,
+                  style: const TextStyle(
+                      color: Color(0xFFD3D3D3),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20.0),
+                ),
+                SizedBox(
+                  height: height * 0.005,
+                ),
+                Text(
+                  userController.username.value,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w500, fontSize: 20.0),
+                ),
+                SizedBox(
+                  height: height * 0.004,
+                ),
+                Container(
+                  height: 2.0,
+                  width: double.infinity,
+                  color: const Color(0xFFD3D3D3),
+                ),
+                SizedBox(
+                  height: height * 0.02,
+                ),
+                const Text(
+                  'Email',
+                  style: TextStyle(
+                      color: Color(0xFFD3D3D3),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20.0),
+                ),
+                SizedBox(
+                  height: height * 0.005,
+                ),
+                Text(
+                  userController.email.value,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w500, fontSize: 20.0),
+                ),
+                SizedBox(
+                  height: height * 0.004,
+                ),
+                Container(
+                  height: 2.0,
+                  width: double.infinity,
+                  color: const Color(0xFFD3D3D3),
+                ),
+                SizedBox(
+                  height: height * 0.02,
+                ),
+                Text(
+                  'Address'.tr,
+                  style: const TextStyle(
+                      color: Color(0xFFD3D3D3),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20.0),
+                ),
+                SizedBox(
+                  height: height * 0.005,
+                ),
+                Text(
+                  userController.address.value,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w500, fontSize: 20.0),
+                ),
+                SizedBox(
+                  height: height * 0.004,
+                ),
+                Container(
+                  height: 2.0,
+                  width: double.infinity,
+                  color: const Color(0xFFD3D3D3),
+                ),
+                SizedBox(
+                  height: height * 0.02,
+                ),
+                Text(
+                  'Language'.tr,
+                  style: const TextStyle(
+                      color: Color(0xFFD3D3D3),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20.0),
+                ),
+                SizedBox(
+                  height: height * 0.005,
+                ),
+                Text(
+                  userController.language.value,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w500, fontSize: 20.0),
+                ),
+                SizedBox(
+                  height: height * 0.004,
+                ),
+                Container(
+                  height: 2.0,
+                  width: double.infinity,
+                  color: const Color(0xFFD3D3D3),
+                ),
+                SizedBox(
+                  height: height * 0.02,
+                ),
+                Text(
+                  'Gender'.tr,
+                  style: const TextStyle(
+                      color: Color(0xFFD3D3D3),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20.0),
+                ),
+                SizedBox(
+                  height: height * 0.005,
+                ),
+                Text(
+                  userController.gender.value,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w500, fontSize: 20.0),
+                ),
+                SizedBox(
+                  height: height * 0.004,
+                ),
+                Container(
+                  height: 2.0,
+                  width: double.infinity,
+                  color: const Color(0xFFD3D3D3),
+                ),
+                SizedBox(
+                  height: height * 0.02,
+                ),
+                SizedBox(
+                  height: height * 0.05,
+                ),
+                MainButton(
+                  title: 'Edit Profile'.tr,
+                  onPressed: () {
+                    Get.toNamed('/edit_profile_screen');
+                  },
+                )
+              ],
+            ),
+          )
         ],
       ),
     );

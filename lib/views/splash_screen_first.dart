@@ -63,14 +63,14 @@ class SplashScreenFirst extends StatelessWidget {
                   onPressed: () {
                     Get.to(() => const SplashScreenSecond(),
                         transition: Transition.rightToLeft,
-                        duration: const Duration(milliseconds: 700));
+                        duration: const Duration(milliseconds: 700),);
                   },
                 )
               ],
             ),
           ),
         ),
-      )),
+      ),),
     );
   }
 }

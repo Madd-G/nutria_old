@@ -4,8 +4,10 @@ class Dictionary extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en_US': {
-          'Identify Fruits and Vegetables Through\nCamera and Pictures' : 'Identify Fruits and Vegetables Through\nCamera and Pictures',
-          'Find Out The Nutrition and Benefits of\nFruits and Vegetables' : 'Find Out The Nutrition and Benefits of\nFruits and Vegetables',
+          'Identify Fruits and Vegetables Through\nCamera and Pictures':
+              'Identify Fruits and Vegetables Through\nCamera and Pictures',
+          'Find Out The Nutrition and Benefits of\nFruits and Vegetables':
+              'Find Out The Nutrition and Benefits of\nFruits and Vegetables',
           'Login': 'Login',
           'Enter your email address and\npassword to access your account':
               'Enter your email address and\npassword to access your account',
@@ -38,20 +40,25 @@ class Dictionary extends Translations {
           'Fruit': 'Fruit',
           'Vegetable': 'Vegetable',
           'Fruit List': 'Fruit List',
-          'Find your favorite fruit' : 'Find your favorite fruit',
-          'Find your favorite vegetable' : 'Find your favorite vegetable',
-          'select language' : 'select language',
-          'Save' : 'Save',
-          'Description' : 'Description',
-          'Gender' : 'Gender',
-          'Language' : 'Language',
-          'SCAN' : 'SCAN',
-          'HOME' : 'HOME',
-          'PROFILE' : 'PROFILE',
+          'Find your favorite fruit': 'Find your favorite fruit',
+          'Find your favorite vegetable': 'Find your favorite vegetable',
+          'select language': 'select language',
+          'Save': 'Save',
+          'Description': 'Description',
+          'Gender': 'Gender',
+          'Language': 'Language',
+          'SCAN': 'SCAN',
+          'HOME': 'HOME',
+          'PROFILE': 'PROFILE',
+          'Register': 'Register',
+          'OR' : 'OR',
+          'Login with Google' : 'Login with Google',
         },
         'id': {
-          'Identify Fruits and Vegetables Through\nCamera and Pictures' : 'Identifikasi Buah dan Sayuran\nMelalui Kamera dan Gambar',
-          'Find Out The Nutrition and Benefits of\nFruits and Vegetables' :'Cari Tahu Nutrisi dan Manfaat\nBuah dan Sayur',
+          'Identify Fruits and Vegetables Through\nCamera and Pictures':
+              'Identifikasi Buah dan Sayuran\nMelalui Kamera dan Gambar',
+          'Find Out The Nutrition and Benefits of\nFruits and Vegetables':
+              'Cari Tahu Nutrisi dan Manfaat\nBuah dan Sayur',
           'Login': 'Masuk',
           'Enter your email address and\npassword to access your account':
               'Masukkan alamat email dan password\nterdaftar untuk masuk ke akunmu',
@@ -83,17 +90,20 @@ class Dictionary extends Translations {
           'See All': 'Lihat Semua',
           'Fruit': 'Buah',
           'Vegetable': 'Sayuran',
-          'Fruit List' : 'Daftar Buah',
-          'Find your favorite fruit' : 'Temukan buah favorit anda',
-          'Find your favorite vegetable' : 'Temukan sayuran favorit anda',
-          'select language' : 'Pilih bahasa',
-          'Save' : 'Simpan',
-          'Description' : 'Deskripsi',
-          'Gender' : 'Jenis Kelamin',
-          'Language' : 'Bahasa',
-          'SCAN' : 'PINDAI',
-          'HOME' : 'BERANDA',
-          'PROFILE' : 'PROFIL',
+          'Fruit List': 'Daftar Buah',
+          'Find your favorite fruit': 'Temukan buah favorit anda',
+          'Find your favorite vegetable': 'Temukan sayuran favorit anda',
+          'select language': 'Pilih bahasa',
+          'Save': 'Simpan',
+          'Description': 'Deskripsi',
+          'Gender': 'Jenis Kelamin',
+          'Language': 'Bahasa',
+          'SCAN': 'PINDAI',
+          'HOME': 'BERANDA',
+          'PROFILE': 'PROFIL',
+          'Register': 'Daftar',
+          'OR' : 'ATAU',
+          'Login with Google' : 'Masuk dengan Google'
         }
       };
 }

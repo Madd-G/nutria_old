@@ -28,15 +28,16 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Center(
-                            child: SafeArea(
-                          child: Text(
-                            'Nutria',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 35.0,
-                                fontWeight: FontWeight.w700),
+                          child: SafeArea(
+                            child: Text(
+                              'Nutria',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 35.0,
+                                  fontWeight: FontWeight.w700),
+                            ),
                           ),
-                        )),
+                        ),
                         SizedBox(
                           height: height * 0.025,
                         ),
@@ -71,28 +72,31 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(13.0),
-                        child: Container(
-                          height: 90.0,
-                          width: double.infinity,
-                          color: Theme.of(context).colorScheme.primary,
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Image.asset('assets/images/scan.png'),
-                                const SizedBox(
-                                  width: 18.0,
-                                ),
-                                Text(
-                                  'SCAN TO FIND OUT ABOUT\nA FRUIT OR VEGETABLE'
-                                      .tr,
-                                  style: const TextStyle(
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.white),
-                                )
-                              ],
+                        child: GestureDetector(
+                          onTap: () => Get.toNamed('/camera_screen'),
+                          child: Container(
+                            height: 90.0,
+                            width: double.infinity,
+                            color: Theme.of(context).colorScheme.primary,
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Image.asset('assets/images/scan.png'),
+                                  const SizedBox(
+                                    width: 18.0,
+                                  ),
+                                  Text(
+                                    'SCAN TO FIND OUT ABOUT\nA FRUIT OR VEGETABLE'
+                                        .tr,
+                                    style: const TextStyle(
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -132,7 +136,7 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: height * 0.03,
                       ),
-                      const RecommendationCarousel(),
+                      recommendationCarousel(context),
                     ],
                   ),
                 )
@@ -145,30 +149,32 @@ class HomeScreen extends StatelessWidget {
               // right: width/2,
               // left: -175,
               child: Container(
-                  height: 60.0,
-                  width: 320.0,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.black,
-                            blurRadius: 1.0,
-                            blurStyle: BlurStyle.outer,
-                            offset: Offset.fromDirection(1.0),
-                            spreadRadius: 1.0)
-                      ],
-                      borderRadius: BorderRadius.circular(30.0)),
-                  child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: TextField(
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                            hintText: 'Find fruits or vegetables'.tr,
-                            contentPadding: const EdgeInsets.symmetric(
-                                vertical: 8.0, horizontal: 15.0),
-                            prefixIcon: const Icon(Icons.search),
-                            border: InputBorder.none),
-                      ))),
+                height: 60.0,
+                width: 320.0,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black,
+                          blurRadius: 1.0,
+                          blurStyle: BlurStyle.outer,
+                          offset: Offset.fromDirection(1.0),
+                          spreadRadius: 1.0)
+                    ],
+                    borderRadius: BorderRadius.circular(30.0)),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: TextField(
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        hintText: 'Find fruits or vegetables'.tr,
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 8.0, horizontal: 15.0),
+                        prefixIcon: const Icon(Icons.search),
+                        border: InputBorder.none),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

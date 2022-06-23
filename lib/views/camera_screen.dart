@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -30,11 +29,15 @@ class _CameraScreenState extends State<CameraScreen> {
     cameraController =
         CameraController(cameraDescription, ResolutionPreset.high);
 
-    cameraController?.addListener(() {
-      if (mounted) {
-        setState(() {});
-      }
-    });
+    cameraController?.addListener(
+      () {
+        if (mounted) {
+          setState(
+            () {},
+          );
+        }
+      },
+    );
 
     if (cameraController!.value.hasError) {
       if (kDebugMode) {
@@ -49,7 +52,9 @@ class _CameraScreenState extends State<CameraScreen> {
     }
 
     if (mounted) {
-      setState(() {});
+      setState(
+        () {},
+      );
     }
   }
 
@@ -86,15 +91,16 @@ class _CameraScreenState extends State<CameraScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            FloatingActionButton(
-              child: const Icon(
-                Icons.browse_gallery,
-                color: Colors.black,
+            GestureDetector(
+              onTap: () => pickImageGallery(context),
+              child: Container(
+                width: 55,
+                height: 55,
+                child: Image.asset(
+                  'assets/images/apel.png',
+                  fit: BoxFit.cover,
+                ),
               ),
-              backgroundColor: Colors.white,
-              onPressed: () {
-                pickImageGallery(context);
-              },
             )
           ],
         ),
@@ -111,9 +117,10 @@ class _CameraScreenState extends State<CameraScreen> {
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             FloatingActionButton(
-              child: const Icon(
-                Icons.camera,
-                color: Colors.black,
+              child: ClipOval(
+                child: Container(
+                  color: Colors.white,
+                ),
               ),
               backgroundColor: Colors.white,
               onPressed: () {
@@ -138,22 +145,23 @@ class _CameraScreenState extends State<CameraScreen> {
       child: Align(
         alignment: Alignment.centerLeft,
         child: TextButton.icon(
-            onPressed: () {
-              onSwitchCamera();
-            },
-            icon: Icon(
-              getCameraLensIcons(lensDirection),
-              color: Colors.white,
-              size: 24,
-            ),
-            label: Text(
-              lensDirection
-                  .toString()
-                  .substring(lensDirection.toString().indexOf('.') + 1)
-                  .toUpperCase(),
-              style: const TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.w500),
-            )),
+          onPressed: () {
+            onSwitchCamera();
+          },
+          icon: Icon(
+            getCameraLensIcons(lensDirection),
+            color: Colors.white,
+            size: 24,
+          ),
+          label: Text(
+            lensDirection
+                .toString()
+                .substring(lensDirection.toString().indexOf('.') + 1)
+                .toUpperCase(),
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.w500),
+          ),
+        ),
       ),
     );
   }
@@ -163,9 +171,11 @@ class _CameraScreenState extends State<CameraScreen> {
       final image = await ImagePicker().pickImage(source: ImageSource.gallery);
       if (image != null) {
         return Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => PreviewScreen(imgPath: image)));
+          context,
+          MaterialPageRoute(
+            builder: (context) => PreviewScreen(imgPath: image),
+          ),
+        );
       }
       if (image == null) return;
 
@@ -173,19 +183,25 @@ class _CameraScreenState extends State<CameraScreen> {
       imageGallery = imageTemporary;
     } on PlatformException catch (e) {
       if (kDebugMode) {
-        print('Failed to pick image,\n$e',);
+        print(
+          'Failed to pick image,\n$e',
+        );
       }
     }
   }
 
   onCapture(context) async {
     try {
-      await cameraController?.takePicture().then((value) {
-        Navigator.push(
+      await cameraController?.takePicture().then(
+        (value) {
+          Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => PreviewScreen(imgPath: value)));
-      });
+              builder: (context) => PreviewScreen(imgPath: value),
+            ),
+          );
+        },
+      );
     } catch (e) {
       showCameraException(e);
     }
@@ -194,23 +210,31 @@ class _CameraScreenState extends State<CameraScreen> {
   @override
   void initState() {
     super.initState();
-    availableCameras().then((value) {
-      cameras = value;
-      if (cameras.length > 0) {
-        setState(() {
-          selectedCameraIndex = 0;
-        });
-        initCamera(cameras[selectedCameraIndex]).then((value) {});
-      } else {
-        if (kDebugMode) {
-          print('No camera available');
+    availableCameras().then(
+      (value) {
+        cameras = value;
+        if (cameras.length > 0) {
+          setState(
+            () {
+              selectedCameraIndex = 0;
+            },
+          );
+          initCamera(cameras[selectedCameraIndex]).then(
+            (value) {},
+          );
+        } else {
+          if (kDebugMode) {
+            print('No camera available');
+          }
         }
-      }
-    }).catchError((e) {
-      if (kDebugMode) {
-        print('Error : ${e.code}');
-      }
-    });
+      },
+    ).catchError(
+      (e) {
+        if (kDebugMode) {
+          print('Error : ${e.code}');
+        }
+      },
+    );
   }
 
   @override
@@ -245,6 +269,8 @@ class _CameraScreenState extends State<CameraScreen> {
       ),
     );
   }
+
+
 
   getCameraLensIcons(lensDirection) {
     switch (lensDirection) {
