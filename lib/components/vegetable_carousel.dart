@@ -71,7 +71,7 @@ Widget vegetableCarousel(BuildContext context) {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                vegetable.title,
+                                vegetable.name,
                                 style: const TextStyle(
                                     fontSize: 15.0,
                                     fontWeight: FontWeight.w500),

@@ -39,7 +39,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.detailFruitVegetable.title,
+                    widget.detailFruitVegetable.name,
                     style: const TextStyle(
                         fontSize: 35.0, fontWeight: FontWeight.w700),
                   ),

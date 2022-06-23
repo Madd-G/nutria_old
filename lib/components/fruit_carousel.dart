@@ -71,7 +71,7 @@ Widget fruitCarousel(context) {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                fruit.title,
+                                fruit.name,
                                 style: const TextStyle(
                                     fontSize: 15.0,
                                     fontWeight: FontWeight.w500),

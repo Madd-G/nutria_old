@@ -79,7 +79,7 @@ Widget recommendationCarousel(BuildContext context) {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(5, 3, 0, 0),
                             child: Text(
-                              recommendation.title,
+                              recommendation.name,
                               style: const TextStyle(
                                 color: Colors.black26,
                                 fontSize: 16.0,
