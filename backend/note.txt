@@ -1,3 +1,0 @@
-# source venv/scripts/activate
-# uvicorn main:app --reload
-# docker run --name mysqlfastapi -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=fastapitest mysql
