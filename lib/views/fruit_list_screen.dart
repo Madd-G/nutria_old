@@ -8,6 +8,7 @@ class FruitListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SingleChildScrollView(
@@ -129,7 +130,7 @@ class FruitListScreen extends StatelessWidget {
                       SizedBox(
                         height: height * 0.03,
                       ),
-                      fruitCarousel(context)
+                      FruitCarousel()
                     ],
                   ),
                 )

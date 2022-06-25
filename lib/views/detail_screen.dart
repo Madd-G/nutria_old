@@ -5,6 +5,7 @@ import 'package:nutria/models/fruit_vegetable_model.dart';
 class DetailScreen extends StatefulWidget {
   const DetailScreen({Key? key, required this.detailFruitVegetable})
       : super(key: key);
+
   final FruitVegetable detailFruitVegetable;
 
   @override

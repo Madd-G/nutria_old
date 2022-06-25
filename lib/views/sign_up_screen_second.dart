@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../components/main_button.dart';
 import '../components/text_input_decoration.dart';
-import '../controllers/controller.dart';
+import '../controllers/controllers.dart';
 
 class SignUpScreenSecond extends StatelessWidget {
   const SignUpScreenSecond({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final Controller c = Get.put<Controller>(Controller());
+    final Controllers c = Get.put<Controllers>(Controllers());
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(

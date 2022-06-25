@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nutria/controllers/controller.dart';
+import 'package:nutria/controllers/controllers.dart';
 import 'package:get/get.dart';
 import '../components/main_button.dart';
 import '../components/text_input_decoration.dart';
@@ -9,8 +9,8 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Controller c = Get.put<Controller>(
-      Controller(),
+    final Controllers c = Get.put<Controllers>(
+      Controllers(),
     );
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
