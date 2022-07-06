@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:nutria/components/fruit_carousel.dart';
+import 'package:nutria/components/fruit_card.dart';
 import 'package:get/get.dart';
+import 'package:nutria/controllers/controllers.dart';
 import 'package:nutria/views/vegetable_list_screen.dart';
 
 class FruitListScreen extends StatelessWidget {
-  const FruitListScreen({Key? key}) : super(key: key);
+  FruitListScreen({Key? key}) : super(key: key);
+  final Controllers controller = Get.put(Controllers());
 
   @override
   Widget build(BuildContext context) {
-
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SingleChildScrollView(
@@ -96,7 +97,7 @@ class FruitListScreen extends StatelessWidget {
                             ),
                           ),
                           GestureDetector(
-                            onTap: () => Get.to(const VegetableListScreen(),
+                            onTap: () => Get.to(() => const VegetableListScreen(),
                                 transition: Transition.leftToRight),
                             child: Container(
                               height: 50,
@@ -130,7 +131,23 @@ class FruitListScreen extends StatelessWidget {
                       SizedBox(
                         height: height * 0.03,
                       ),
-                      FruitCarousel()
+                      Obx(() {
+                        if (controller.isLoading.value) {
+                          return const CircularProgressIndicator();
+                        } else {
+                          return SizedBox(
+                            height: 600,
+                            child: ListView.builder(
+                                reverse: false,
+                                shrinkWrap: true,
+                                scrollDirection: Axis.vertical,
+                                itemCount: controller.productList.length,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return FruitCard(controller.productList[index]);
+                                }),
+                          );
+                        }
+                      })
                     ],
                   ),
                 )

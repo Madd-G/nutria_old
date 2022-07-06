@@ -71,7 +71,7 @@ class VegetableListScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           GestureDetector(
-                            onTap: () => Get.to(const FruitListScreen(),
+                            onTap: () => Get.to(() => FruitListScreen(),
                                 transition: Transition.rightToLeft),
                             child: Container(
                               height: 50,

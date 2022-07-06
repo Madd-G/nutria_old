@@ -11,6 +11,7 @@ Widget vegetableCarousel(BuildContext context) {
     height: 600,
     child: ListView.builder(
       reverse: false,
+      shrinkWrap: true,
       scrollDirection: Axis.vertical,
       itemCount: vegetables.length,
       itemBuilder: (BuildContext context, int index) {
@@ -20,8 +21,8 @@ Widget vegetableCarousel(BuildContext context) {
           child: GestureDetector(
             onTap: () =>
                 Get.to(() => DetailScreen(detailFruitVegetable: vegetable)),
-            child: Hero(
-              tag: vegetable.imageUrl,
+            // child: Hero(
+            //   tag: vegetable.imageUrl,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(2.0),
@@ -115,7 +116,7 @@ Widget vegetableCarousel(BuildContext context) {
                   ),
                 ),
               ),
-            ),
+            // ),
           ),
         );
       },

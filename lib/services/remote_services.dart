@@ -9,8 +9,13 @@ class RemoteServices {
     http.Response response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       var jsonString = response.body;
+      print(" =============== fetch Product ===============");
       return modelFromJson(jsonString);
+    } else if (response.statusCode == 500){
+      print(" ==== Rerun fetchProducts =======");
+      return fetchProducts();
     } else {
+      print(" ================ Throw Error ==============");
       throw response.statusCode;
     }
   }
