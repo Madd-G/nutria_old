@@ -4,32 +4,24 @@ import 'package:nutria/views/detail_screen.dart';
 import '../models/fruit_vegetable_model.dart';
 import 'package:get/get.dart';
 
-import '../models/model.dart';
-
-
 class FruitCarousel extends StatelessWidget {
-  final Model? model;
+  final Controllers controller = Get.put(Controllers());
 
-  const FruitCarousel({Key? key, this.model}) : super(key: key);
-
+  FruitCarousel({Key? key}) : super(key: key);
 
   @override
-  Widget build(context) {
-
-    final Controllers controller = Get.put(Controllers());
-
+  Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return SizedBox(
       height: 600,
       child: ListView.builder(
-        shrinkWrap: false,
         reverse: false,
         scrollDirection: Axis.vertical,
+        // itemCount: controller.productList.length,
         itemCount: fruits.length,
         itemBuilder: (BuildContext context, int index) {
           FruitVegetable fruit = fruits[index];
-          Model model = controller.productList[index];
           return Padding(
             padding: const EdgeInsets.only(left: 4.0, right: 4.0, top: 4.0),
             child: GestureDetector(
@@ -86,7 +78,7 @@ class FruitCarousel extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  model.name,
+                                  fruit.name,
                                   style: const TextStyle(
                                       fontSize: 15.0,
                                       fontWeight: FontWeight.w500),
@@ -106,18 +98,21 @@ class FruitCarousel extends StatelessWidget {
                                 const SizedBox(
                                   height: 5.0,
                                 ),
-                                Text('Description'.tr,
-                                    style: const TextStyle(
-                                        color: Color(0xffA1A8B9),
-                                        fontSize: 13.0)),
+                                Text(
+                                  'Description'.tr,
+                                  style: const TextStyle(
+                                      color: Color(0xffA1A8B9), fontSize: 13.0),
+                                ),
                                 Expanded(
-                                  child: Text(fruit.description,
-                                      textAlign: TextAlign.justify,
-                                      maxLines: 10,
-                                      style: const TextStyle(
-                                        fontSize: 12.0,
-                                        overflow: TextOverflow.fade,
-                                      )),
+                                  child: Text(
+                                    fruit.description,
+                                    textAlign: TextAlign.justify,
+                                    maxLines: 10,
+                                    style: const TextStyle(
+                                      fontSize: 12.0,
+                                      overflow: TextOverflow.fade,
+                                    ),
+                                  ),
                                 )
                               ],
                             ),
@@ -135,4 +130,3 @@ class FruitCarousel extends StatelessWidget {
     );
   }
 }
-

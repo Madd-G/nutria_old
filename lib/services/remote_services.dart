@@ -3,7 +3,6 @@ import '../models/model.dart';
 
 class RemoteServices {
   // var client = http.Client();
-  // final String url = 'https://fakestoreapi.com/products';
   final String url = 'https://nutriaapi.herokuapp.com/get-fruit';
 
   Future<List<Model>> fetchProducts() async {

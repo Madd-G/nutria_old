@@ -7,17 +7,17 @@ String modelToJson(List<Model> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Model {
+   int id;
+   String name;
+   String category;
+   String description;
+
   Model({
     required this.id,
     required this.name,
     required this.category,
     required this.description,
   });
-
-  int id;
-  String name;
-  String category;
-  String description;
 
   factory Model.fromJson(Map<String, dynamic> json) => Model(
         id: json["id"] == null ? null : json["id"],

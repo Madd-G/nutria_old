@@ -23,7 +23,7 @@ class _DetailScreenState extends State<DetailScreen> {
             SizedBox(
               // color: Theme.of(context).colorScheme.primary,
               height: height * 0.38,
-              width: double.infinity, // width: double.infinity,
+              width: double.infinity,
               child: Hero(
                 tag: widget.detailFruitVegetable.imageUrl,
                 child: Image(
