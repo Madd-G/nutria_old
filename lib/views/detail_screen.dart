@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nutria/models/fruit_vegetable_model.dart';
 
-class DetailScreen extends StatefulWidget {
-  const DetailScreen({Key? key, required this.detailFruitVegetable})
-      : super(key: key);
+import '../models/model.dart';
 
-  final FruitVegetable detailFruitVegetable;
+class DetailScreen extends StatefulWidget {
+  const DetailScreen({this.detailFruitVegetable, this.model});
+
+  final FruitVegetable? detailFruitVegetable;
+  final Model? model;
 
   @override
   State<DetailScreen> createState() => _DetailScreenState();
@@ -19,19 +21,25 @@ class _DetailScreenState extends State<DetailScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               // color: Theme.of(context).colorScheme.primary,
               height: height * 0.38,
               width: double.infinity,
               child: Hero(
-                tag: widget.detailFruitVegetable.imageUrl,
-                child: Image(
+                tag: widget.model!.name,
+                child: const Image(
+                  // image: AssetImage(fruit.imageUrl),
+                  image: AssetImage("assets/images/apel.png"),
                   fit: BoxFit.cover,
-                  image: AssetImage(
-                    widget.detailFruitVegetable.imageUrl,
-                  ),
                 ),
+                // Image(
+                //   fit: BoxFit.cover,
+                //   image: AssetImage(
+                //     widget.detailFruitVegetable!.imageUrl,
+                //   ),
+                // ),
               ),
             ),
             Padding(
@@ -40,7 +48,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.detailFruitVegetable.name,
+                    widget.model!.name,
                     style: const TextStyle(
                         fontSize: 35.0, fontWeight: FontWeight.w700),
                   ),
@@ -56,7 +64,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     height: height * 0.01,
                   ),
                   Text(
-                    widget.detailFruitVegetable.category,
+                    widget.model!.category,
                     style: const TextStyle(fontSize: 16.0),
                   ),
                   SizedBox(
@@ -71,7 +79,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     height: height * 0.01,
                   ),
                   Text(
-                    widget.detailFruitVegetable.description,
+                    widget.model!.description,
                     textAlign: TextAlign.justify,
                     style: const TextStyle(
                       fontSize: 16.0,

@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:nutria/controllers/controllers.dart';
 import 'package:nutria/views/vegetable_list_screen.dart';
 
+import 'detail_screen.dart';
+
 class FruitListScreen extends StatelessWidget {
   FruitListScreen({Key? key}) : super(key: key);
   final Controllers controller = Get.put(Controllers());
@@ -143,7 +145,11 @@ class FruitListScreen extends StatelessWidget {
                                 scrollDirection: Axis.vertical,
                                 itemCount: controller.productList.length,
                                 itemBuilder: (BuildContext context, int index) {
-                                  return FruitCard(controller.productList[index]);
+                                  return GestureDetector(
+                                    onTap: () => Get.to(() => DetailScreen(model: controller.productList[index])),
+                                    child: FruitCard(
+                                        controller.productList[index]),
+                                  );
                                 }),
                           );
                         }

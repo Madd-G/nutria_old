@@ -7,6 +7,7 @@ import '../models/model.dart';
 
 class FruitCard extends StatelessWidget {
   final Model model;
+  final Controllers controller = Get.put(Controllers());
 
   FruitCard(this.model);
 
