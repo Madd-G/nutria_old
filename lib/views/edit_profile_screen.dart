@@ -46,32 +46,31 @@ class EditProfileScreen extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 border: Border.all(
                                     width: 5,
-                                    color:
-                                        Theme.of(context).colorScheme.primary),
+                                    color: Theme.of(context).colorScheme.primary),
                                 image: const DecorationImage(
                                   fit: BoxFit.fill,
-                                  image:
-                                      AssetImage('assets/images/profile.png'),
+                                  image: AssetImage('assets/images/profile.png'),
                                 ),
                               ),
                               height: 100,
                               width: 100,
-                              padding: const EdgeInsets.all(8.0),
+                              // padding: const EdgeInsets.all(8.0),
                             ),
                             Positioned(
-                                bottom: 7,
-                                right: 7,
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Color(0xff3F897F)),
-                                  height: 30,
-                                  width: 30,
-                                  child: const Icon(
-                                    Icons.add,
-                                    color: Colors.white,
-                                  ),
-                                ))
+                              bottom: 7,
+                              right: 7,
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xff3F897F)),
+                                height: 30,
+                                width: 30,
+                                child: const Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -226,7 +225,9 @@ class EditProfileScreen extends StatelessWidget {
                   SizedBox(
                     height: height * 0.05,
                   ),
-                  MainButton(title: 'Save'.tr, onPressed: () {})
+                  MainButton(title: 'Save'.tr, onPressed: () {
+                    Get.toNamed('screen_controller');
+                  })
                 ],
               ),
             )
